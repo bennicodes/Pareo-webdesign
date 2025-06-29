@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+/* Variables */
+:root {
+  /* Colors */
+  --text-color: #333;
+  --background-color: #f8f8f2;
+
+  /* Spacing */
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xl: 4rem;
+}
