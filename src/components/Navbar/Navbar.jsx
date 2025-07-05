@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "../Button/Button";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -10,7 +12,7 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="/about">About Us</a>
           </li>
           <li>
             <a href="/contact">Contact</a>
@@ -18,8 +20,9 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className={styles.userActions}>
-        <button className={styles.actionButton}>Login</button>
-        <button className={styles.actionButton}>Sign Up</button>
+        <Button className={styles.actionButton}>
+          <FontAwesomeIcon icon="fa-solid fa-bars" />
+        </Button>
       </div>
     </div>
   );
