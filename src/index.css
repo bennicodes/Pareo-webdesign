@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Lexend-Regular;
+  src: url(/fonts/Lexend-Regular.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -13,12 +17,42 @@ button {
 /* Variables */
 :root {
   /* Colors */
-  --text-color: #333;
+  --text-color: #000;
+  --secondary-text-color: #fff;
   --background-color: #f8f8f2;
+  --primary-color: #3c3c3c;
+  --secondary-color: #0084ff;
 
   /* Spacing */
   --spacing-small: 0.5rem;
   --spacing-medium: 1rem;
   --spacing-large: 2rem;
   --spacing-xl: 4rem;
+
+  /* Font */
+  --primary-font: Lexend-Regular;
+  --small-font: 0.75rem;
+  --base-font: 1rem;
+  --medium-font: 1.2rem;
+  --large-font: 2rem;
+
+  /* Border */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 16px;
+
+  /* Animations */
+  --glide-animation: gradientAnimation;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

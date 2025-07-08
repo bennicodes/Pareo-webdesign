@@ -1,0 +1,19 @@
+FAQ:
+Our team did not produce its own API but is well-versed in the available APIs. For example, if you need to set up your online shop, we can build a WooCommerce site for you and connect Stripe API to it. If your platform relies on Google Maps or other location services, we can handle that as well.
+
+------------------------
+
+1. Strategi og innsikt
+
+Vi starter med å bli kjent med deg og din bedrift. Dette innebærer:
+
+Behovskartlegging: Vi setter oss inn i dine mål, utfordringer og visjoner.
+Strategisk retning: Sammen definerer vi hva nettsiden skal oppnå og hvem målgruppen er.
+Tidsplan: Vi lager en realistisk plan som passer din tidsramme.
+2. Design og utvikling
+
+Vi skaper en nettside som både ser bra ut og fungerer optimalt.
+
+Skreddersydd design: Designet reflekterer din merkevare og gir en enhetlig visuell identitet.
+Brukervennlighet: Vi prioriterer enkel navigasjon og en god opplevelse for kundene dine.
+Teknisk utvikling: Nettsiden bygges på en moderne plattform som sikrer rask lastetid og stabilitet.
