@@ -26,7 +26,7 @@ function App() {
       </header>
       <main className={styles.main}>
         <div>
-          Har du spørsmål? ​Vi har rask responstid og er alltid ​tilgjengelig
+          Har du spørsmål? Vi har rask responstid og er alltid tilgjengelig
           for å svare på dine spørsmål. Send oss en henvendelse via skjemaet,
           eller ring oss på telefon
         </div>

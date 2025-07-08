@@ -8,7 +8,7 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
 
-  const handleMenuToggle = (e) => {
+  const handleMenuToggle = () => {
     setIsMenuActive((prev) => !prev);
   };
 
