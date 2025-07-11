@@ -40,16 +40,9 @@
 }
 
 .actionContainer .contactButton {
-  background-color: var(--secondary-color);
-  color: var(--secondary-text-color);
   min-height: 32px;
   padding: var(--spacing-small) var(--spacing-medium);
   border-radius: var(--spacing-medium);
-  font-size: var(--medium-font);
-}
-.actionContainer .contactButton:hover {
-  background-color: var(--background-color);
-  color: var(--secondary-color);
 }
 
 .descriptionContainer {

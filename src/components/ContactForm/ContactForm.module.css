@@ -1,0 +1,69 @@
+.contactSection {
+  background-color: var(--background-color);
+  padding: var(--spacing-xl) var(--spacing-large);
+  text-align: center;
+}
+
+.contactSection h2 {
+  margin-bottom: var(--spacing-large);
+  font-size: var(--large-font);
+  color: var(--primary-color);
+}
+
+.successMessageS {
+  font-size: var(--medium-font);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.form input,
+.form textarea {
+  padding: var(--spacing-small) var(--spacing-medium);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-medium);
+  font-size: var(--base-font);
+  width: 100%;
+}
+
+.form .submitButton {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: var(--spacing-small) var(--spacing-medium);
+  transition: background-color 0.3s ease;
+}
+
+.form .submitButton:hover {
+  background: linear-gradient(
+    270deg,
+    var(--secondary-color),
+    var(--secondary-text-color),
+    var(--secondary-color)
+  );
+  background-size: 400% 400%;
+  animation: glideAnimationOnce 0.5s ease-in-out forwards;
+  color: var(--secondary-text-color);
+}
+
+.form .submitButton:active {
+  transform: scale(0.98);
+  transition: 0.1s ease;
+}
+
+/* ------------- */
+@keyframes glideAnimationOnce {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

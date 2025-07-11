@@ -1,6 +1,10 @@
+import { Route, Routes } from "react-router-dom";
 import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
+import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
+import About from "./pages/About/About.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 function App() {
   return (
@@ -25,11 +29,7 @@ function App() {
         </div>
       </header>
       <main className={styles.main}>
-        <div>
-          Har du spørsmål? Vi har rask responstid og er alltid tilgjengelig
-          for å svare på dine spørsmål. Send oss en henvendelse via skjemaet,
-          eller ring oss på telefon
-        </div>
+        <ContactForm />
       </main>
     </div>
   );
