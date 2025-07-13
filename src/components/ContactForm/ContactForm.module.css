@@ -1,35 +1,55 @@
-.successMessageS {
-  font-size: var(--medium-font);
+.formContainer {
+  width: 100%;
+  min-height: 600px;
+  background-color: var(--background-color);
   color: var(--primary-color);
-  margin-bottom: var(--spacing-medium);
+  padding: var(--spacing-large);
+  border: 1px solid #e1e1e1;
+  border-radius: var(--border-radius-large);
+  box-shadow: rgba(220, 220, 220, 0.3) 0px 0px 10px 0px;
 }
 
 .form {
-  max-width: 600px;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
 }
-.formDescription {
-  padding: var(--spacing-medium) 0;
-  font-size: var(--medium-font);
+.inputGroup {
+  color: #404040;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
 }
 
-.form input,
-.form textarea {
-  padding: var(--spacing-small) var(--spacing-medium);
+.inputGroup input,
+textarea {
+  background-color: transparent;
   border: 1px solid #ccc;
-  border-radius: var(--border-radius-medium);
   font-size: var(--base-font);
   width: 100%;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  padding: 0.5rem 0px;
+}
+.inputGroup input {
+  padding: 0 4px;
 }
 
-.form textarea {
-  resize: none;
+.inputGroup textarea {
+  width: 100%;
+  height: 150px;
+  padding: 8px;
+  resize: vertical;
 }
-
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color);
+}
 .form .submitButton {
   position: relative;
   overflow: hidden;
@@ -53,6 +73,11 @@
 .form .submitButton:active {
   transform: scale(0.98);
   transition: 0.1s ease;
+}
+.successMessage {
+  font-size: var(--medium-font);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-medium);
 }
 
 /* ------------- */

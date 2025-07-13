@@ -44,7 +44,9 @@ function App() {
             Har du spørsmål? Send en uforpliktende henvendelse. Så tar vi
             kontakt så fort som mulig.
           </p>
-          <ContactForm />
+          <div className={styles.contactFormContainer}>
+            <ContactForm />
+          </div>
         </section>
       </main>
     </div>

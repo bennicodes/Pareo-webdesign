@@ -88,6 +88,13 @@
   width: 50%;
   padding-bottom: var(--spacing-large);
 }
+.contactFormContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
 
 @media screen and (max-width: 768px) {
   .header {
@@ -96,7 +103,7 @@
   .headerDescription {
     width: 75%;
   }
-  .main{
+  .main {
     padding: 0 var(--spacing-large);
   }
 }

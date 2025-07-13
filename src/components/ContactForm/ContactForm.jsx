@@ -4,19 +4,29 @@ import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
   return (
-    <form className={styles.form}>
-      <input type="text" name="name" placeholder="Navn" />
-      <input type="email" name="email" placeholder="E-post" />
-      <textarea
-        name="message"
-        placeholder="Maximum 300 tegn"
-        maxLength="300"
-        rows={8}
-      />
-      <Button classname={styles.submitButton} type="submit">
-        Send
-      </Button>
-    </form>
+    <fieldset className={styles.formContainer}>
+      <form className={styles.form}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="name">Navn</label>
+          <input type="text" name="name" />
+        </div>
+        {/* -------------------- */}
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">Email</label>
+          <input type="email" name="email" />
+        </div>
+        {/* -------------------- */}
+        <div className={styles.inputGroup}>
+          <label htmlFor="message">Hendvendelse</label>
+          <textarea name="message" maxLength="300" />
+        </div>
+        <p className={styles.characterCount}></p>
+        <p className={styles.message}></p>
+        <Button classname={styles.submitButton} type="submit">
+          Send
+        </Button>
+      </form>
+    </fieldset>
   );
 };
 
