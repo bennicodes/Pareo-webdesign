@@ -10,25 +10,27 @@ import Contact from "./pages/Contact/Contact.jsx";
 function App() {
   return (
     <div className={styles.rootContainer}>
-      <Navbar />
+      <div className={styles.navbarContainer}>
+        <Navbar />
+      </div>
       <header className={styles.header}>
         <div className={styles.headerContainer}>
           <h1>Vi gjør din visjon virkelig!</h1>
-          <h3>
+          <h4>
             Limited Designs er et digitalt designbyrå som hjelper deg å bli
             synlig på nettet.
-          </h3>
-        </div>
-        <div className={styles.headerDescriptionContainer}>
-          <Button classname={styles.contactButton}>Kontakt Oss</Button>
+          </h4>
+
+          <Button classname={styles.contactButton}>Kontakt oss</Button>
           <div className={styles.headerDescription}>
-            <p className={styles.descriptionText}>
+            <p className={styles.description}>
               Har du spørsmål? Send en uforpliktende henvendelse. Så tar vi
               kontakt så fort som mulig.
             </p>
           </div>
         </div>
       </header>
+      {/* ---------------------------- */}
       <main className={styles.main}>
         <section className={styles.descriptionSection}>
           <h2 className={styles.descriptionTitle}>Hva gjør vi?</h2>

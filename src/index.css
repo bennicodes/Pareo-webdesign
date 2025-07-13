@@ -34,12 +34,13 @@ button {
   --spacing-xl: 4rem;
 
   /* Font */
-  --primary-font: Lexend-Regular;
-  --body-font: Inter-Regular, sans-serif;
+  --primary-font: Inter-Regular, sans-serif;
+  --body-font: Lexend-Regular, sans-serif;
   --small-font: 0.75rem;
   --base-font: 1rem;
   --medium-font: 1.2rem;
   --large-font: 2rem;
+  --xl-font: 3rem;
 
   /* Border */
   --border-radius-small: 4px;
