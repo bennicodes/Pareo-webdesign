@@ -2,6 +2,10 @@
   font-family: Lexend-Regular;
   src: url(/fonts/Lexend-Regular.ttf);
 }
+@font-face {
+  font-family: Inter-Regular;
+  src: url(/fonts/Inter-Regular.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -31,6 +35,7 @@ button {
 
   /* Font */
   --primary-font: Lexend-Regular;
+  --body-font: Inter-Regular, sans-serif;
   --small-font: 0.75rem;
   --base-font: 1rem;
   --medium-font: 1.2rem;

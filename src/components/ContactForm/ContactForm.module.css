@@ -1,15 +1,3 @@
-.contactSection {
-  background-color: var(--background-color);
-  padding: var(--spacing-xl) var(--spacing-large);
-  text-align: center;
-}
-
-.contactSection h2 {
-  margin-bottom: var(--spacing-large);
-  font-size: var(--large-font);
-  color: var(--primary-color);
-}
-
 .successMessageS {
   font-size: var(--medium-font);
   color: var(--primary-color);
@@ -18,10 +6,15 @@
 
 .form {
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
+}
+.formDescription {
+  padding: var(--spacing-medium) 0;
+  font-size: var(--medium-font);
 }
 
 .form input,
@@ -31,6 +24,10 @@
   border-radius: var(--border-radius-medium);
   font-size: var(--base-font);
   width: 100%;
+}
+
+.form textarea {
+  resize: none;
 }
 
 .form .submitButton {
