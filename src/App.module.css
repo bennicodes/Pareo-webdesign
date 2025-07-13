@@ -8,6 +8,7 @@
   overflow: hidden;
 }
 
+/* Header -------------- */
 .header {
   width: 100%;
   background-color: var(--primary-color);
@@ -31,7 +32,7 @@
 .headerContainer h3 {
   text-align: center;
 }
-.actionContainer {
+.headerDescriptionContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -39,20 +40,21 @@
   gap: var(--spacing-medium);
 }
 
-.actionContainer .contactButton {
+.headerDescriptionContainer .contactButton {
   min-height: 32px;
   padding: var(--spacing-small) var(--spacing-medium);
   border-radius: var(--spacing-medium);
 }
-
-.descriptionContainer {
+/* Header Description */
+.headerDescription {
   width: 50%;
   padding-top: var(--spacing-large);
 }
-.description {
+.descriptionText {
   text-align: center;
 }
 
+/* Main -------------- */
 .main {
   width: 100%;
   display: flex;
@@ -61,27 +63,17 @@
   padding: 0 var(--spacing-xl);
   font-family: var(--primary-font);
 }
-.description {
+
+/* Description ------------ */
+.descriptionSection {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-large) 0;
-}
-.descriptionHeading {
-  padding-bottom: var(--spacing-medium);
-  text-align: center;
-}
-.descriptionText {
-  text-align: start;
-}
-.middleDescription {
-  border-left: 1px solid var(--text-color);
-  border-right: 1px solid var(--text-color);
-  padding: 0 var(--spacing-large);
+  flex-direction: column;
+  gap: var(--spacing-large);
+  padding: var(--spacing-xl) 0;
 }
 
+/* Contact ---------------- */
 .contactSection {
   width: 100%;
   display: flex;
@@ -96,25 +88,21 @@
   width: 50%;
   padding-bottom: var(--spacing-large);
 }
-.descriptionSection {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-large);
-  padding: var(--spacing-xl) 0;
-}
 
 @media screen and (max-width: 768px) {
   .header {
     padding: var(--spacing-large);
   }
-  .descriptionContainer {
+  .headerDescription {
     width: 75%;
+  }
+  .main{
+    padding: 0 var(--spacing-large);
   }
 }
 
 @media screen and (max-width: 525px) {
-  .descriptionContainer {
+  .headerDescription {
     width: 100%;
   }
 }
