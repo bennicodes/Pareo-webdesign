@@ -1,12 +1,12 @@
 .formContainer {
   width: 100%;
-  min-height: 600px;
   background-color: var(--background-color);
   color: var(--primary-color);
   padding: var(--spacing-large);
   border: 1px solid #e1e1e1;
   border-radius: var(--border-radius-large);
   box-shadow: rgba(220, 220, 220, 0.3) 0px 0px 10px 0px;
+  font-family: var(--primary-font);
 }
 
 .form {
@@ -15,7 +15,12 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-large);
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
 }
 .inputGroup {
   color: #404040;
@@ -25,7 +30,7 @@
   font-weight: 400;
 }
 
-.inputGroup input,
+.inputWrapper input,
 textarea {
   background-color: transparent;
   border: 1px solid #ccc;
@@ -34,23 +39,57 @@ textarea {
   border: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   padding: 0.5rem 0px;
+  transition: border-color 0.3s;
 }
-.inputGroup input {
-  padding: 0 4px;
+.inputWrapper input {
+  padding: 4px;
 }
 
-.inputGroup textarea {
-  width: 100%;
+.inputWrapper textarea {
   height: 150px;
   padding: 8px;
   resize: vertical;
+  font-size: var(--small-font);
 }
-input:focus,
-textarea:focus {
+.inputWrapper input:focus,
+.inputWrapper textarea:focus {
   outline: none;
   border-bottom: 2px solid var(--secondary-color);
 }
-.form .submitButton {
+.inputWrapper label {
+  position: absolute;
+  left: 0;
+  bottom: 0.25rem;
+  color: #6a6a6a;
+  font-weight: lighter;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+}
+.inputWrapper:focus-within label,
+.inputWrapper.filled label {
+  transform: translateY(-1.5rem);
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+}
+
+.characterCount {
+  font-size: var(--small-font);
+  margin-top: var(--spacing-small);
+}
+.characterCountWarning {
+  color: red;
+}
+
+/* --------------------- */
+.actionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+.actionContainer .submitButton {
+  width: 100%;
   position: relative;
   overflow: hidden;
   border: none;
@@ -58,7 +97,7 @@ textarea:focus {
   transition: background-color 0.3s ease;
 }
 
-.form .submitButton:hover {
+.actionContainer .submitButton:hover {
   background: linear-gradient(
     270deg,
     var(--secondary-color),
@@ -70,22 +109,52 @@ textarea:focus {
   color: var(--secondary-text-color);
 }
 
-.form .submitButton:active {
+.actionContainer .submitButton:active {
   transform: scale(0.98);
   transition: 0.1s ease;
 }
+
+/* ------------------ */
+
 .successMessage {
-  font-size: var(--medium-font);
-  color: var(--primary-color);
-  margin-bottom: var(--spacing-medium);
+  font-size: var(--small-font);
+  color: var(--text-color);
+  animation: swoopIn 0.5s ease forwards;
+}
+.errorMessage {
+  font-size: var(--small-font);
+  color: red;
+  margin-top: var(--spacing-small);
+  animation: shake 0.3s ease;
 }
 
-/* ------------- */
+/* Animations ------------- */
 @keyframes glideAnimationOnce {
   0% {
     background-position: 0% 50%;
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  40% {
+    transform: translateX(4px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

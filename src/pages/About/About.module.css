@@ -1,4 +1,5 @@
 .pageContainer {
+  min-width: 350px;
   font-family: "Inter", sans-serif;
   background-color: #f1f5f9;
   color: #1e293b;
