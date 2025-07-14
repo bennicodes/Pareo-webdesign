@@ -1,30 +1,175 @@
-import React from "react";
+import { useState } from "react";
+import useContactFormValidation from "../../hooks/useFormValidation";
 import Button from "../Button/Button";
+import Spinner from "../Spinner/Spinner";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [characterCount, setCharacterCount] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  // Custom hook for form validation
+  const { errors, validate, validateField } = useContactFormValidation();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === "message") {
+      setCharacterCount(value.length);
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (submitted) {
+      validateField(name, value);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+    setSubmitted(true);
+
+    const isValid = validate(formData);
+    if (!isValid) {
+      setErrorMessage("Vennligst fyll ut alle feltene");
+      return;
+    }
+
+    setIsLoading(true);
+    console.log("Form data submitted:", formData);
+    setSuccessMessage(
+      "Takk for din henvendelse! Vi tar kontakt så snart som mulig."
+    );
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+    setCharacterCount(0);
+    setIsLoading(false);
+
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 3000);
+  };
+
   return (
     <fieldset className={styles.formContainer}>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <div className={styles.inputGroup}>
-          <label htmlFor="name">Navn</label>
-          <input type="text" name="name" />
+          <div
+            className={`${styles.inputWrapper} ${
+              formData.name ? styles.filled : ""
+            }`}
+          >
+            <label htmlFor="name">Navn</label>
+            <input
+              type="text"
+              name="name"
+              maxLength={50}
+              onChange={handleChange}
+              value={formData.name}
+              onBlur={handleBlur}
+            />
+            {errors.name && (
+              <p className={styles.errorMessage}>{errors.name}</p>
+            )}
+          </div>
         </div>
         {/* -------------------- */}
         <div className={styles.inputGroup}>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" />
+          <div
+            className={`${styles.inputWrapper} ${
+              formData.email ? styles.filled : ""
+            }`}
+          >
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={formData.email}
+              onBlur={handleBlur}
+            />
+            {errors.email && (
+              <p className={styles.errorMessage}>{errors.email}</p>
+            )}
+          </div>
         </div>
         {/* -------------------- */}
         <div className={styles.inputGroup}>
-          <label htmlFor="message">Hendvendelse</label>
-          <textarea name="message" maxLength="300" />
+          <div
+            className={`${styles.inputWrapper} ${
+              formData.phone ? styles.filled : ""
+            }`}
+          >
+            <label htmlFor="phone">Telefon</label>
+            <input
+              type="phone"
+              name="phone"
+              onChange={handleChange}
+              value={formData.phone}
+              onBlur={handleBlur}
+            />
+            {errors.phone && (
+              <p className={styles.errorMessage}>{errors.phone}</p>
+            )}
+          </div>
         </div>
-        <p className={styles.characterCount}></p>
-        <p className={styles.message}></p>
-        <Button classname={styles.submitButton} type="submit">
-          Send
-        </Button>
+        {/* -------------------- */}
+        <div className={styles.inputGroup}>
+          <div
+            className={`${styles.inputWrapper} ${
+              formData.message ? styles.filled : ""
+            }`}
+          >
+            <label htmlFor="message">Hendvendelse</label>
+            <textarea
+              name="message"
+              maxLength="300"
+              onChange={handleChange}
+              value={formData.message}
+              onBlur={handleBlur}
+            />
+            {errors.message && (
+              <p className={styles.errorMessage}>{errors.message}</p>
+            )}
+          </div>
+          <p
+            className={`${styles.characterCount} ${
+              characterCount >= 300 ? styles.characterCountWarning : ""
+            }`}
+          >
+            Max antall tegn {characterCount}/300
+          </p>
+        </div>
+        <div className={styles.actionContainer}>
+          <p className={styles.errorMessage}>{errorMessage}</p>
+          <p className={styles.successMessage}>{successMessage}</p>
+          <Button classname={styles.submitButton} type="submit">
+            {isLoading ? <Spinner /> : "Send"}
+          </Button>
+        </div>
       </form>
     </fieldset>
   );
