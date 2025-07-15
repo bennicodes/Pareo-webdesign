@@ -15,7 +15,6 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
-  const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
   // Custom hook for form validation
@@ -42,13 +41,11 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrorMessage("");
     setSuccessMessage("");
     setSubmitted(true);
 
     const isValid = validate(formData);
     if (!isValid) {
-      setErrorMessage("Vennligst fyll ut alle feltene");
       return;
     }
 
@@ -91,10 +88,8 @@ const ContactForm = () => {
               value={formData.name}
               onBlur={handleBlur}
             />
-            {errors.name && (
-              <p className={styles.errorMessage}>{errors.name}</p>
-            )}
           </div>
+          {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
         </div>
         {/* -------------------- */}
         <div className={styles.inputGroup}>
@@ -111,10 +106,10 @@ const ContactForm = () => {
               value={formData.email}
               onBlur={handleBlur}
             />
-            {errors.email && (
-              <p className={styles.errorMessage}>{errors.email}</p>
-            )}
           </div>
+          {errors.email && (
+            <p className={styles.errorMessage}>{errors.email}</p>
+          )}
         </div>
         {/* -------------------- */}
         <div className={styles.inputGroup}>
@@ -131,10 +126,10 @@ const ContactForm = () => {
               value={formData.phone}
               onBlur={handleBlur}
             />
-            {errors.phone && (
-              <p className={styles.errorMessage}>{errors.phone}</p>
-            )}
           </div>
+          {errors.phone && (
+            <p className={styles.errorMessage}>{errors.phone}</p>
+          )}
         </div>
         {/* -------------------- */}
         <div className={styles.inputGroup}>
@@ -151,10 +146,10 @@ const ContactForm = () => {
               value={formData.message}
               onBlur={handleBlur}
             />
-            {errors.message && (
-              <p className={styles.errorMessage}>{errors.message}</p>
-            )}
           </div>
+          {errors.message && (
+            <p className={styles.errorMessage}>{errors.message}</p>
+          )}
           <p
             className={`${styles.characterCount} ${
               characterCount >= 300 ? styles.characterCountWarning : ""
@@ -164,7 +159,6 @@ const ContactForm = () => {
           </p>
         </div>
         <div className={styles.actionContainer}>
-          <p className={styles.errorMessage}>{errorMessage}</p>
           <p className={styles.successMessage}>{successMessage}</p>
           <Button classname={styles.submitButton} type="submit">
             {isLoading ? <Spinner /> : "Send"}
