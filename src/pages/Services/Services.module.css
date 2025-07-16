@@ -1,0 +1,140 @@
+.pageContainer {
+  min-width: 350px;
+  font-family: "Inter", sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+.header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(
+    to top,
+    var(--secondary-background-color) 0%,
+    var(--navbar-background) 100%
+  );
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Services Section */
+.services {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  position: relative;
+}
+
+.services h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--secondary-background-color);
+  display: block;
+  margin: 0.5rem auto 1.5rem;
+  border-radius: 2px;
+}
+
+.services p {
+  font-size: 1.125rem;
+  color: #334155;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+/* CTA Section */
+.cta {
+  max-width: 700px;
+  margin: 5rem auto 6rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #1e293b;
+  background: none;
+  box-shadow: none;
+}
+
+.cta h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.cta p {
+  font-size: 1.125rem;
+  color: #334155;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta button {
+  background-color: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 0.75rem 2.25rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.15);
+}
+
+.cta button:hover {
+  background-color: #2563eb;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p,
+  .services p,
+  .cta p {
+    font-size: 1rem;
+  }
+
+  .cta h2 {
+    font-size: 1.75rem;
+  }
+}
