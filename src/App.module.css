@@ -18,7 +18,11 @@
 /* Header -------------- */
 .header {
   width: 100%;
-  background: radial-gradient(circle at center, #2563eb 0%, #0f172a 100%);
+  background: linear-gradient(
+    to top,
+    var(--secondary-background-color) 0%,
+    var(--navbar-background) 100%
+  );
   color: var(--secondary-text-color);
   display: flex;
   flex-direction: column;
@@ -34,10 +38,12 @@
   padding-top: var(--spacing-large);
 }
 .headerContainer h1 {
-  font-size: 3rem;
+  font-size: var(--xl-font);
   margin-bottom: var(--spacing-medium);
   font-weight: 800;
+  line-height: 1.2;
   text-align: center;
+  font-family: "Inter", sans-serif;
 }
 .headerContainer h4 {
   max-width: 580px;
@@ -64,8 +70,8 @@
   box-shadow: 0 0 8px var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Header Description */
 
+/* Header Description */
 .description {
   max-width: 500px;
   margin: 0 auto;
@@ -105,7 +111,7 @@
   content: "";
   width: 60px;
   height: 4px;
-  background-color: #2563eb;
+  background-color: var(--secondary-background-color);
   display: block;
   margin: 0.5rem 0;
   border-radius: 2px;
@@ -141,7 +147,7 @@
   .main {
     padding: 0 var(--spacing-large);
   }
-  .contactDescription{
+  .contactDescription {
     width: 100%;
   }
   .contactFormContainer {
@@ -156,5 +162,4 @@
   .contactFormContainer {
     width: 100%;
   }
-
 }
