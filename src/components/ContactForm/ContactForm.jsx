@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendContactEmail } from "../../config/emailJsConfig";
 import useContactFormValidation from "../../hooks/useFormValidation";
 import Button from "../Button/Button";
 import Spinner from "../Spinner/Spinner";
@@ -16,6 +17,7 @@ const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [characterCount, setCharacterCount] = useState(0);
   const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Custom hook for form validation
   const { errors, validate, validateField } = useContactFormValidation();
@@ -39,35 +41,44 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSuccessMessage("");
+    setErrorMessage("");
     setSubmitted(true);
 
+    // Terminate if form not valid
     const isValid = validate(formData);
     if (!isValid) {
       return;
     }
+    try {
+      setIsLoading(true);
+      await sendContactEmail(formData);
+      console.log("Form submitted successfully");
 
-    setIsLoading(true);
-    console.log("Form data submitted:", formData);
-    setSuccessMessage(
-      "Takk for din henvendelse! Vi tar kontakt så snart som mulig."
-    );
+      setErrorMessage("");
+      setSuccessMessage(
+        "Takk for din henvendelse! Vi tar kontakt så snart som mulig."
+      );
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-    setCharacterCount(0);
-    setIsLoading(false);
-
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 3000);
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      setCharacterCount(0);
+    } catch (error) {
+      console.log("Error submitting form:", error);
+      setErrorMessage("Beklager, noe gikk galt. Vennligst prøv igjen senere.");
+    } finally {
+      setIsLoading(false);
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
+    }
   };
 
   return (
@@ -160,6 +171,7 @@ const ContactForm = () => {
         </div>
         <div className={styles.actionContainer}>
           <p className={styles.successMessage}>{successMessage}</p>
+          <p className={styles.errorMessage}>{errorMessage}</p>
           <Button classname={styles.submitButton} type="submit">
             {isLoading ? <Spinner /> : "Send"}
           </Button>

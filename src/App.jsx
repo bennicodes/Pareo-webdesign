@@ -35,9 +35,9 @@ function App() {
         <section className={styles.descriptionSection}>
           <h2 className={styles.descriptionTitle}>Hva gjør vi?</h2>
           <p>
-            Vi starter med å bli kjent med deg og din bedrift.{" "}
-            <p>Dette innebærer:</p>
+            Vi starter med å bli kjent med deg og din bedrift. Dette innebærer:
           </p>
+          <p></p>
           <Description />
         </section>
         {/* ---------------------------- */}
