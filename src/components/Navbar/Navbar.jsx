@@ -31,8 +31,8 @@ const Navbar = () => {
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stop-color="#2563eb" />
-                    <stop offset="100%" stop-color="#0f172a" />
+                    <stop offset="0%" stopColor="#2563eb" />
+                    <stop offset="100%" stopColor="#0f172a" />
                   </linearGradient>
                 </defs>
 
@@ -44,11 +44,11 @@ const Navbar = () => {
                 <text
                   x="200"
                   y="105"
-                  font-family="Inter, sans-serif"
-                  font-weight="700"
-                  font-size="42"
+                  fontFamily="Inter, sans-serif"
+                  fontWeight="700"
+                  fontSize="42"
                   fill="#ffffff"
-                  text-anchor="middle"
+                  textAnchor="middle"
                 >
                   Pareo
                 </text>
