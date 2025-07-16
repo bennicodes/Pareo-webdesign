@@ -1,8 +1,8 @@
 <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="pareoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2563eb" />
-      <stop offset="100%" stop-color="#0f172a" />
+      <stop offset="0%" stopColor="#2563eb" />
+      <stop offset="100%" stopColor="#0f172a" />
     </linearGradient>
   </defs>
 
@@ -11,8 +11,8 @@
         fill="url(#pareoGradient)" />
 
   <!-- Logo-tekst -->
-  <text x="200" y="105" font-family="Inter, sans-serif" font-weight="700"
-        font-size="42" fill="#ffffff" text-anchor="middle">
+  <text x="200" y="105" fontFamily="Inter, sans-serif" fontWeight="700"
+        fontSize="42" fill="#ffffff" textAnchor="middle">
     Pareo
   </text>
 </svg>
