@@ -52,8 +52,8 @@
 }
 
 .headerContainer .contactButton {
-  background-color: var(--background-color);
-  color: var(--secondary-color);
+  background-color: var(--header-button-color);
+  color: var(--secondary-text-color);
   height: 48px;
   display: flex;
   align-items: center;
@@ -61,12 +61,12 @@
   border-radius: var(--border-radius-medium);
   padding: var(--spacing-small);
   border: none;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .headerContainer .contactButton:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  background-color: var(--header-button-hover);
+  color: var(--secondary-text-color);
   box-shadow: 0 0 8px var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
