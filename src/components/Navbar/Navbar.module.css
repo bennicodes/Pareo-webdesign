@@ -102,8 +102,10 @@
   transition: 0.2s ease;
 }
 .menuButton:hover {
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
   transition: 0.2s ease;
-  box-shadow: 0 0 16px var(--secondary-color);
+  box-shadow: 0 0 8px var(--background-color);
 }
 
 .menuIcon {
@@ -114,6 +116,9 @@
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0 var(--spacing-medium);
+  }
   .menuButton {
     color: var(--secondary-text-color);
     display: flex;
@@ -122,10 +127,11 @@
   .navLinks {
     width: 50%;
     height: 100vh;
-    background-color: var(--primary-color);
+    background-color: var(--navbar-background);
     flex-direction: column;
     justify-content: center;
     padding-top: var(--spacing-xl);
+    gap: 0;
     position: fixed;
     top: 0;
     right: 0;
@@ -135,17 +141,20 @@
   }
   .navLinks li {
     width: 100%;
-    height: 32px;
+    height: 42px;
     display: flex;
+    align-items: center;
   }
   .navLinks a {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
     padding: var(--spacing-small) var(--spacing-large);
     font-size: var(--base-font);
   }
   .navLinks a:hover {
-    background-color: #333333;
+    background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
   }
   .navLinks .contactLink {
@@ -153,6 +162,7 @@
     background: var(--secondary-color);
     text-align: center;
     margin: 0 var(--spacing-medium);
+    margin-top: var(--spacing-large);
   }
   .navLinks .contactLink:hover {
     background-color: var(--background-color);

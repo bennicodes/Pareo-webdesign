@@ -41,8 +41,21 @@
 }
 
 .accordionContent {
+  text-align: start;
   padding: 1rem 1.5rem;
   font-size: 1rem;
   color: #334155;
   border-top: 1px solid #e2e8f0;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out, padding 0.2s ease-in-out;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.accordionContent.open {
+  max-height: 500px; 
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

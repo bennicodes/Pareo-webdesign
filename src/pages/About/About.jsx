@@ -1,8 +1,19 @@
 import React from "react";
-import styles from "./About.module.css";
+import { useNavigate } from "react-router";
 import Navbar from "../../components/Navbar/Navbar";
+import styles from "./About.module.css";
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const navigateToContact = () => {
+    navigate("/kontakt");
+  };
+
+  const navigateToServices = () => {
+    navigate("/tjenester");
+  };
+
   return (
     <div className={styles.pageContainer}>
       <header className={styles.header}>
@@ -16,7 +27,7 @@ const About = () => {
             Vi bygger moderne nettsider med presisjon, lidenskap og samarbeid i
             sentrum.
           </p>
-          <button>Se hva vi tilbyr</button>
+          <button onClick={navigateToServices}>Se hva vi tilbyr</button>
         </section>
 
         <section className={styles.intro}>
@@ -64,7 +75,7 @@ const About = () => {
             Vi er alltid åpne for nye samarbeid og spennende prosjekter. Kontakt
             oss gjerne for en uformell prat!
           </p>
-          <button>Kontakt oss</button>
+          <button onClick={navigateToContact}>Kontakt oss</button>
         </section>
       </main>
     </div>
