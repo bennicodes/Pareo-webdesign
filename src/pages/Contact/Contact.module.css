@@ -39,19 +39,20 @@
 }
 
 .formSection {
-  text-align: center;
   flex-basis: 50%;
 }
 
 .formSection h2 {
   font-size: var(--large-font);
   color: var(--text-color);
+  padding-left: var(--spacing-small);
   font-family: "Inter", sans-serif;
   font-weight: 700;
 }
 
 .formSection p {
   padding: var(--spacing-medium) 0;
+  padding-left: var(--spacing-small);
 }
 
 .formContainer {
@@ -108,19 +109,19 @@
   .infoSection {
     flex-basis: 100%;
   }
-  .formContainer{
+  .formContainer {
     padding: var(--spacing-medium);
   }
-  .infoSection{
-      width: 75%;
+  .infoSection {
+    width: 75%;
     margin-top: 0;
   }
 }
-@media screen and (max-width: 550px){
-    .mainContent{
-        padding: var(--spacing-large) var(--spacing-medium);
-    }
-    .infoSection{
-        width: 90%;
-    }
+@media screen and (max-width: 550px) {
+  .mainContent {
+    padding: var(--spacing-large) var(--spacing-medium);
+  }
+  .infoSection {
+    width: 90%;
+  }
 }
