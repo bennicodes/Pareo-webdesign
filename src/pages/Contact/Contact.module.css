@@ -1,0 +1,126 @@
+.contactContainer {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  min-width: 350px;
+  font-family: var(--primary-font);
+}
+
+.headerContent {
+  color: var(--secondary-text-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-large);
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-medium);
+}
+
+.headerContent h1 {
+  font-size: var(--xl-font);
+  margin-bottom: var(--spacing-small);
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.headerContent p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.mainContent {
+  padding: var(--spacing-xl) var(--spacing-large);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  font-family: var(--primary-font);
+}
+
+.formSection {
+  text-align: center;
+  flex-basis: 50%;
+}
+
+.formSection h2 {
+  font-size: var(--large-font);
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.formSection p {
+  padding: var(--spacing-medium) 0;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.infoSection {
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    var(--secondary-background-color) 0%,
+    var(--navbar-background) 100%
+  );
+  color: var(--secondary-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-large);
+  border-radius: var(--border-radius-medium);
+  flex-basis: 50%;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+
+.infoSection h2 {
+  margin-bottom: var(--spacing-large);
+  color: var(--secondary-text-color);
+}
+
+.infoSection ul {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+.infoSection a {
+  color: var(--secondary-text-color);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) var(--spacing-medium);
+  }
+
+  .formContainer,
+  .infoSection {
+    flex-basis: 100%;
+  }
+  .formContainer{
+    padding: var(--spacing-medium);
+  }
+  .infoSection{
+      width: 75%;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 550px){
+    .mainContent{
+        padding: var(--spacing-large) var(--spacing-medium);
+    }
+    .infoSection{
+        width: 90%;
+    }
+}

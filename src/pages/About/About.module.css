@@ -57,12 +57,13 @@
   box-shadow: 0 0 8px var(--background-color);
   transform: scale(1.03);
 }
-
+/* ------------------ */
 .intro,
 .story,
 .services,
 .cta {
   max-width: 1000px;
+  color: var(--text-color);
   margin: 0 auto;
   padding: 4rem 1.5rem;
   text-align: center;
@@ -75,7 +76,8 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #0f172a;
+  /* color: #0f172a; */
+  color: var(--text-color);
   position: relative;
 }
 
