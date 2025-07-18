@@ -45,9 +45,18 @@
 .formSection h2 {
   font-size: var(--large-font);
   color: var(--text-color);
-  padding-left: var(--spacing-small);
+  /* padding-left: var(--spacing-small); */
   font-family: "Inter", sans-serif;
   font-weight: 700;
+}
+.formSection h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: var(--secondary-background-color);
+  display: block;
+  margin: 0.5rem 0.25rem;
+  border-radius: 2px;
 }
 
 .formSection p {
@@ -103,6 +112,18 @@
     align-items: center;
     justify-content: center;
     padding: var(--spacing-xl) var(--spacing-medium);
+  }
+  .formSection h2{
+    text-align: center;
+  }
+  .formSection h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-background-color);
+    display: block;
+    margin: 0.5rem auto 1.5rem;
+    border-radius: 2px;
   }
 
   .formContainer,
