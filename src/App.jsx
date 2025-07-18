@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import Description from "./components/Description/Description.jsx";
+import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
@@ -19,7 +20,8 @@ function App() {
       <div className={styles.navbarContainer}>
         <Navbar />
       </div>
-      <header className={styles.header}>
+      {/* <header className={styles.header}> */}
+      <Header>
         <div className={styles.headerContainer}>
           <h1>Vi gjør din visjon virkelig!</h1>
           <h4>
@@ -40,7 +42,8 @@ function App() {
             </p>
           </div>
         </div>
-      </header>
+      </Header>
+      {/* </header> */}
       {/* ---------------------------- */}
       <main className={styles.main}>
         <section className={styles.descriptionSection}>

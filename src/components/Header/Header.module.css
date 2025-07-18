@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    var(--secondary-background-color) 0%,
+    var(--navbar-background) 100%
+  );
+  color: var(--secondary-text-color);
+  padding: var(--spacing-xl);
+  font-family: var(--primary-font);
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    padding: var(--spacing-large);
+  }
+}
