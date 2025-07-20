@@ -7,11 +7,13 @@
 .descriptionHeading {
   padding-bottom: var(--spacing-medium);
   text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
 }
 .descriptionHeading::after {
   content: "";
   width: 60px;
-  height: 2px;
+  height: 4px;
   background-color: var(--secondary-background-color);
   display: block;
   margin: 0.5rem auto 1.5rem;

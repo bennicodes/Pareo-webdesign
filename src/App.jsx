@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import Description from "./components/Description/Description.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import About from "./pages/About/About.jsx";
@@ -20,13 +21,12 @@ function App() {
       <div className={styles.navbarContainer}>
         <Navbar />
       </div>
-      {/* <header className={styles.header}> */}
       <Header>
         <div className={styles.headerContainer}>
-          <h1>Vi gjør din visjon virkelig!</h1>
+          <h1>Nettsider som gjør inntrykk – og konverterer.</h1>
           <h4>
-            Limited Designs er et digitalt designbyrå som hjelper deg å bli
-            synlig på nettet.
+            Pareo er et moderne designbyrå som bygger skreddersydde nettsider
+            for å styrke din synlighet og troverdighet på nett.
           </h4>
 
           <Button
@@ -37,8 +37,8 @@ function App() {
           </Button>
           <div className={styles.headerDescription}>
             <p className={styles.description}>
-              Har du spørsmål? Send en uforpliktende henvendelse. Så tar vi
-              kontakt så fort som mulig.
+              Klar for å ta neste steg? Send oss en uforpliktende henvendelse –
+              vi svarer raskt.
             </p>
           </div>
         </div>
@@ -66,6 +66,9 @@ function App() {
           </div>
         </section>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

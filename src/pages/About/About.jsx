@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import AboutDescription from "../../components/AboutDescription/AboutDescription";
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./About.module.css";
 
@@ -60,13 +62,16 @@ const About = () => {
           </p>
         </section>
 
+        {/* TODO: Fix hover effect to something functional.*/}
+
         <section className={styles.services}>
           <h2>Dette kan vi hjelpe deg med</h2>
-          <ul>
+          {/* <ul>
             <li>✅ Responsive nettsider</li>
             <li>✅ Design og brukeropplevelse</li>
             <li>✅ Skreddersydde løsninger</li>
-          </ul>
+          </ul> */}
+          <AboutDescription />
         </section>
 
         <section className={styles.cta}>
@@ -78,6 +83,9 @@ const About = () => {
           <button onClick={navigateToContact}>Kontakt oss</button>
         </section>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

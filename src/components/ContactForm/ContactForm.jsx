@@ -55,7 +55,6 @@ const ContactForm = () => {
     try {
       setIsLoading(true);
       await sendContactEmail(formData);
-      console.log("Form submitted successfully");
 
       setErrorMessage("");
       setSuccessMessage(
@@ -70,8 +69,7 @@ const ContactForm = () => {
         message: "",
       });
       setCharacterCount(0);
-    } catch (error) {
-      console.log("Error submitting form:", error);
+    } catch {
       setErrorMessage("Beklager, noe gikk galt. Vennligst prøv igjen senere.");
     } finally {
       setIsLoading(false);

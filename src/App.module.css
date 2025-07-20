@@ -99,6 +99,7 @@
 }
 .descriptionTitle,
 .contactTitle {
+  font-family: var(--primary-font), sans-serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -156,6 +157,9 @@
 }
 
 @media screen and (max-width: 525px) {
+  .headerContainer h1 {
+    font-size: var(--large-font);
+  }
   .headerDescription {
     width: 100%;
   }

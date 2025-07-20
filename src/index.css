@@ -1,8 +1,4 @@
 @font-face {
-  font-family: Lexend-Regular;
-  src: url(/fonts/Lexend-Regular.ttf);
-}
-@font-face {
   font-family: Inter-Regular;
   src: url(/fonts/Inter-Regular.ttf);
 }
@@ -23,7 +19,7 @@ button {
   /* Colors */
   --text-color: #000;
   --secondary-text-color: #fff;
-  --background-color: #f8f8f8;
+  --background-color: #f1f5f9;
   --secondary-background-color: #2563eb;
   --navbar-background: #0f172a;
   --primary-color: #3c3c3c;
@@ -40,7 +36,6 @@ button {
 
   /* Font */
   --primary-font: Inter-Regular, sans-serif;
-  --body-font: Lexend-Regular, sans-serif;
   --small-font: 0.75rem;
   --base-font: 1rem;
   --medium-font: 1.2rem;
