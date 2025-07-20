@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./Services.module.css";
 
@@ -72,6 +73,9 @@ const Services = () => {
           <button onClick={navigateToContact}>Kontakt oss</button>
         </section>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

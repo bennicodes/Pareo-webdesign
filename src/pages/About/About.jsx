@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import AboutDescription from "../../components/AboutDescription/AboutDescription";
+import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./About.module.css";
 
@@ -82,6 +83,9 @@ const About = () => {
           <button onClick={navigateToContact}>Kontakt oss</button>
         </section>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

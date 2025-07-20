@@ -23,7 +23,7 @@ function App() {
       </div>
       <Header>
         <div className={styles.headerContainer}>
-          <h1>Skreddersydde nettsider for moderne bedrifter</h1>
+          <h1>Nettsider som gjør inntrykk – og konverterer.</h1>
           <h4>
             Pareo er et moderne designbyrå som bygger skreddersydde nettsider
             for å styrke din synlighet og troverdighet på nett.
@@ -67,7 +67,7 @@ function App() {
         </section>
       </main>
       <footer>
-        <Footer></Footer>
+        <Footer />
       </footer>
     </div>
   );

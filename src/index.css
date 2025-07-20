@@ -1,8 +1,4 @@
 @font-face {
-  font-family: Lexend-Regular;
-  src: url(/fonts/Lexend-Regular.ttf);
-}
-@font-face {
   font-family: Inter-Regular;
   src: url(/fonts/Inter-Regular.ttf);
 }
@@ -40,7 +36,6 @@ button {
 
   /* Font */
   --primary-font: Inter-Regular, sans-serif;
-  --body-font: Lexend-Regular, sans-serif;
   --small-font: 0.75rem;
   --base-font: 1rem;
   --medium-font: 1.2rem;

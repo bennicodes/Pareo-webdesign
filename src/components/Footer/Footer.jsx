@@ -27,26 +27,37 @@ const Footer = () => {
         </div>
 
         <div className={styles.right}>
-          {/* Replace # with actual links when created */}
-          <a href="#" target="_blank" className={styles.socialLink}>
-            <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
-            LinkedIn
-          </a>
-          <a href="#" target="_blank" className={styles.socialLink}>
-            <FontAwesomeIcon
-              className={styles.linkIcon}
-              icon={faSquareInstagram}
-            />
-            Instagram
-          </a>
-          <a href="#" target="_blank" className={styles.socialLink}>
-            <FontAwesomeIcon
-              className={styles.linkIcon}
-              icon={faSquareFacebook}
-            />
-            Facebook
-          </a>
-        </div>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="LinkedIn"
+      >
+        <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
+        LinkedIn
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="Instagram"
+      >
+        <FontAwesomeIcon className={styles.linkIcon} icon={faSquareInstagram} />
+        Instagram
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="Facebook"
+      >
+        <FontAwesomeIcon className={styles.linkIcon} icon={faSquareFacebook} />
+        Facebook
+      </a>
+    </div>
       </div>
     </footer>
   );
