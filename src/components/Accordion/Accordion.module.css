@@ -20,6 +20,7 @@
   padding: 1rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 600;
+  font-family: var(--primary-font);
   color: #1e293b;
   background: none;
   border: none;
@@ -55,7 +56,7 @@
 }
 
 .accordionContent.open {
-  max-height: 500px; 
+  max-height: 500px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
