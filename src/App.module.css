@@ -9,12 +9,6 @@
   font-family: var(--primary-font), sans-serif;
 }
 
-.navbarContainer {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
 /* Header -------------- */
 .header {
   width: 100%;
@@ -45,10 +39,13 @@
   text-align: center;
   font-family: "Inter", sans-serif;
 }
-.headerContainer h4 {
+.headerContainer p {
+  font-size: var(--medium-font);
   max-width: 580px;
   margin: 0 auto 2.5rem;
+  padding: var(--spacing-medium) 0;
   text-align: center;
+  line-height: 1.7;
 }
 
 .headerContainer .contactButton {
@@ -72,9 +69,9 @@
 }
 
 /* Header Description */
-.description {
+.headerDescription .description {
+  font-size: var(--medium-font);
   max-width: 500px;
-  margin: 0 auto;
   margin-top: var(--spacing-large);
   text-align: center;
 }
@@ -153,6 +150,10 @@
   }
   .contactFormContainer {
     width: 75%;
+  }
+  .headerDescription .description,
+  .headerContainer p {
+    font-size: var(--base-font);
   }
 }
 

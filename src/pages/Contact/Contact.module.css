@@ -45,8 +45,6 @@
 .formSection h2 {
   font-size: var(--large-font);
   color: var(--text-color);
-  /* padding-left: var(--spacing-small); */
-  font-family: "Inter", sans-serif;
   font-weight: 700;
 }
 .formSection h2::after {

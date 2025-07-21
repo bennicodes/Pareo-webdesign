@@ -24,10 +24,10 @@ function App() {
       <Header>
         <div className={styles.headerContainer}>
           <h1>Nettsider som gjør inntrykk – og konverterer.</h1>
-          <h4>
+          <p>
             Pareo er et moderne designbyrå som bygger skreddersydde nettsider
             for å styrke din synlighet og troverdighet på nett.
-          </h4>
+          </p>
 
           <Button
             classname={styles.contactButton}

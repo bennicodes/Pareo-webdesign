@@ -16,6 +16,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 /* Logo */
 .logoContainer {
@@ -58,11 +59,16 @@
   color: var(--secondary-color);
   transition: 0.2s ease;
 }
+
 .navLinks a.active {
   border-bottom: 1px solid var(--secondary-text-color);
 }
+.navLinks a.active:hover {
+  border-bottom: 1px solid var(--secondary-color);
+}
 
-.navLinks .contactLink {
+.contactLink {
+  min-height: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,18 +82,13 @@
   );
   background-size: 400% 400%;
   animation: var(--glide-animation) 8s ease infinite;
-  border: none;
 }
+
 .navLinks .contactLink:hover {
-  background-color: transparent;
+  background: var(--secondary-color);
   color: var(--secondary-text-color);
   box-shadow: 0 0 8px var(--secondary-color);
   transition: 0.2s ease;
-}
-
-.userActions {
-  display: flex;
-  gap: var(--spacing-small);
 }
 
 /* Menu */
@@ -168,6 +169,7 @@
     background-color: var(--background-color);
     color: var(--secondary-color);
   }
+
   .navLinksActive {
     transform: translateX(0);
     transition: 0.5s ease;
