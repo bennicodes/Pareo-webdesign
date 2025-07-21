@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -8,8 +9,23 @@ import styles from "./Contact.module.css";
 const Contact = () => {
   return (
     <div className={styles.contactContainer}>
+      <Helmet>
+        <title>Kontakt oss | Pareo</title>
+        <meta
+          name="description"
+          content="Ta kontakt med Pareo for en uforpliktende prat. Vi svarer raskt og hjelper deg gjerne med ditt neste prosjekt."
+        />
+        <meta property="og:title" content="Kontakt oss | Pareo" />
+        <meta
+          property="og:description"
+          content="Ta kontakt med Pareo for en uforpliktende prat. Vi svarer raskt og hjelper deg gjerne med ditt neste prosjekt."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="nb_NO" />
+        <meta property="og:image" content="/img/icons/pareo-main-logo.svg" />
+      </Helmet>
+      {/* ------------------------ */}
       <Navbar />
-
       <Header>
         <div className={styles.headerContent}>
           <h1>Kontakt oss</h1>

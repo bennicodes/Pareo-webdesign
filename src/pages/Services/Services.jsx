@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
 import Footer from "../../components/Footer/Footer";
@@ -42,6 +43,22 @@ const Services = () => {
 
   return (
     <div className={styles.pageContainer}>
+      <Helmet>
+        <title>Tjenester – Pareo</title>
+        <meta
+          name="description"
+          content="Se hvordan Pareo hjelper deg med skreddersydde nettsider, designsystemer, interaktive apper og ytelsesoptimalisering."
+        />
+        <meta property="og:title" content="Tjenester – Pareo" />
+        <meta
+          property="og:description"
+          content="Vi tilbyr moderne frontend-utvikling med fokus på brukervennlighet, ytelse og visuell kvalitet."
+        />
+        <meta property="og:image" content="/img/icons/pareo-main-logo.svg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="nb_NO" />
+      </Helmet>
+      {/* ------------------------- */}
       <header className={styles.header}>
         <Navbar />
       </header>
