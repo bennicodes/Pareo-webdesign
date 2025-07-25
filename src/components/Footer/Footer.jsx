@@ -37,7 +37,7 @@ const Footer = () => {
         <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
         LinkedIn
       </a>
-      <a
+      {/* <a
         href="#"
         target="_blank"
         rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const Footer = () => {
       >
         <FontAwesomeIcon className={styles.linkIcon} icon={faSquareInstagram} />
         Instagram
-      </a>
+      </a> */}
       <a
         href="#"
         target="_blank"
