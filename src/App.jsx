@@ -6,38 +6,18 @@ import Description from "./components/Description/Description.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
-import About from "./pages/About/About.jsx";
-import Contact from "./pages/Contact/Contact.jsx";
-import { Helmet } from "react-helmet-async";
+import { usePageTitle } from "./hooks/usePageTitles.js";
 
 function App() {
   const contactSectionRef = useRef(null);
 
+  usePageTitle("Pareo – Nettsider som gjør inntrykk og konverterer");
   const scrollToContactSection = () => {
     contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className={styles.rootContainer}>
-      <Helmet>
-        <title>Pareo – Nettsider som gjør inntrykk og konverterer</title>
-        <meta
-          name="description"
-          content="Pareo er et moderne designbyrå som bygger skreddersydde nettsider for å styrke din synlighet og troverdighet på nett."
-        />
-        <meta
-          property="og:title"
-          content="Pareo – Nettsider som gjør inntrykk og konverterer"
-        />
-        <meta
-          property="og:description"
-          content="Vi bygger moderne og skreddersydde nettsider som skaper resultater – med fokus på design, funksjonalitet og synlighet."
-        />
-        <meta property="og:image" content="/img/icons/pareo-main-logo.svg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="nb_NO" />
-      </Helmet>
-
       <div className={styles.navbarContainer}>
         <Navbar />
       </div>

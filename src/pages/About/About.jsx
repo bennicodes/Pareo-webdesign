@@ -1,13 +1,14 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router";
 import AboutDescription from "../../components/AboutDescription/AboutDescription";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { usePageTitle } from "../../hooks/usePageTitles";
 import styles from "./About.module.css";
 
 const About = () => {
   const navigate = useNavigate();
+  usePageTitle("Om oss – Pareo");
 
   const navigateToContact = () => {
     navigate("/kontakt");
@@ -19,22 +20,6 @@ const About = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <Helmet>
-        <title>Om oss | Pareo</title>
-        <meta
-          name="description"
-          content="Vi er to utviklere med bakgrunn fra fotballbanen som nå bygger moderne, brukervennlige nettsider med lidenskap og samarbeid i sentrum."
-        />
-        <meta property="og:title" content="Om oss | Pareo" />
-        <meta
-          property="og:description"
-          content="Vi er to utviklere med bakgrunn fra fotballbanen som nå bygger moderne, brukervennlige nettsider med lidenskap og samarbeid i sentrum."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="nb_NO" />
-        <meta property="og:image" content="/img/icons/pareo-main-logo.svg" />
-      </Helmet>
-      {/* -------------------------- */}
       <header className={styles.header}>
         <Navbar />
       </header>
