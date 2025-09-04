@@ -56,7 +56,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius-medium);
-  padding: var(--spacing-small);
+  padding: var(--spacing-small) var(--spacing-large);
   border: none;
   font-weight: 600;
 }
