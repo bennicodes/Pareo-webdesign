@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://pareodesign.no/</loc>
+    <lastmod>2025-09-12</lastmod>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pareodesign.no/tjenester</loc>
+    <lastmod>2025-09-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pareodesign.no/om-oss</loc>
+    <lastmod>2025-09-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://pareodesign.no/kontakt</loc>
+    <lastmod>2025-09-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Når /referanser lanseres -->
+  <!-- <url>
+    <loc>https://pareodesign.no/referanser</loc>
+    <lastmod>2025-09-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url> -->
+
+  <!-- Eksempel på et konkret case (legg til når det finnes) -->
+  <!-- <url>
+    <loc>https://pareodesign.no/arbeid/firmanavn-prosjekt</loc>
+    <lastmod>2025-09-13</lastmod>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url> -->
+</urlset>
