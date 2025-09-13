@@ -2,38 +2,117 @@
 <html lang="no">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- ✅ Default/fallback title -->
-    <title>Pareo – Nettsider som gjør inntrykk</title>
-
-    <!-- ✅ Description for search engines -->
+    <!-- Primary SEO -->
+    <title>Pareo – Nettsider som gjør inntrykk og konverterer</title>
     <meta
       name="description"
-      content="Pareo lager skreddersydde nettsider som bygger tillit og skaper resultater."
+      content="Pareo bygger skreddersydde nettsider med moderne design som øker synlighet, bygger tillit og konverterer for bedrifter og personer i Norge."
     />
+    <link rel="canonical" href="https://pareodesign.no/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <!-- ✅ Open Graph for social sharing -->
-    <meta property="og:title" content="Pareo – Nettsider som gjør inntrykk" />
+    <!-- Language/region targeting -->
+    <link rel="alternate" href="https://pareodesign.no/" hreflang="nb-NO" />
+    <link rel="alternate" href="https://pareodesign.no/" hreflang="x-default" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Pareo – Nettsider som gjør inntrykk og konverterer"
+    />
     <meta
       property="og:description"
+      content="Skreddersydde nettsider med moderne design som bygger tillit og skaper resultater."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pareodesign.no/" />
+    <meta property="og:site_name" content="Pareo" />
+    <meta property="og:locale" content="nb_NO" />
+    <!-- Use an absolute URL for share images (1200×630 recommended) -->
+    <meta
+      property="og:image"
+      content="https://pareodesign.no/img/pareo-preview.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Pareo – skreddersydde nettsider som konverterer"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pareo – Nettsider som gjør inntrykk og konverterer"
+    />
+    <meta
+      name="twitter:description"
       content="Skreddersydde nettsider med moderne design som bygger tillit og gir resultater."
     />
-    <meta property="og:image" content="/img/pareo-preview.png" />
-    <meta property="og:url" content="https://pareodesign.no" />
-    <meta property="og:type" content="website" />
+    <meta
+      name="twitter:image"
+      content="https://pareodesign.no/img/pareo-preview.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Pareo – skreddersydde nettsider som konverterer"
+    />
 
-    <!-- ✅ Twitter card -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- ✅ Favicon -->
+    <!-- PWA / theming -->
+    <meta name="theme-color" content="#0b0b0c" />
     <link
       rel="icon"
       type="image/svg+xml"
       href="/img/icons/pareo-alt-logo.svg"
     />
-  </head>
+    <link rel="apple-touch-icon" href="/img/icons/icon-192.png" />
 
+    <!-- Structured Data (Organization/Service) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Pareo",
+        "url": "https://pareodesign.no/",
+        "logo": "https://pareodesign.no/img/icons/pareo-alt-logo.svg",
+        "description": "Pareo bygger skreddersydde nettsider med moderne design som øker synlighet, bygger tillit og konverterer.",
+        "email": "benedict.notoane@hotmail.com",
+        "telephone": "+47 40460571",
+        "areaServed": { "@type": "Country", "name": "NO" },
+        "founders": [
+          { "@type": "Person", "name": "Benedict Notoane" },
+          { "@type": "Person", "name": "Shahram Jabari" }
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "benedict.notoane@hotmail.com",
+            "telephone": "+47 40460571",
+            "areaServed": "NO",
+            "availableLanguage": ["nb", "en"]
+          }
+        ],
+        "sameAs": ["https://github.com/bennicodes?tab=repositories"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Pareo",
+        "url": "https://pareodesign.no/",
+        "inLanguage": "nb-NO"
+      }
+    </script>
+
+    <!-- Vite -->
+    <meta name="generator" content="Vite" />
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
