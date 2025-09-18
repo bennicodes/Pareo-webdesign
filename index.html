@@ -1,8 +1,39 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="icon" href="/favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/icons/pareo-alt-logo.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/favicons/safari-pinned-tab.svg"
+      color="#0b0b0c"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Primary SEO -->
     <title>Pareo – Nettsider som gjør inntrykk og konverterer</title>
@@ -14,8 +45,8 @@
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <!-- Language/region targeting -->
-    <link rel="alternate" href="https://pareodesign.no/" hreflang="nb-NO" />
-    <link rel="alternate" href="https://pareodesign.no/" hreflang="x-default" />
+    <link rel="alternate" hreflang="nb-NO" href="https://pareodesign.no/" />
+    <link rel="alternate" hreflang="x-default" href="https://pareodesign.no/" />
 
     <!-- Open Graph -->
     <meta
@@ -30,9 +61,12 @@
     <meta property="og:url" content="https://pareodesign.no/" />
     <meta property="og:site_name" content="Pareo" />
     <meta property="og:locale" content="nb_NO" />
-    <!-- Use an absolute URL for share images (1200×630 recommended) -->
     <meta
       property="og:image"
+      content="https://pareodesign.no/img/pareo-preview.png"
+    />
+    <meta
+      property="og:image:secure_url"
       content="https://pareodesign.no/img/pareo-preview.png"
     />
     <meta
@@ -41,6 +75,7 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -60,17 +95,25 @@
       name="twitter:image:alt"
       content="Pareo – skreddersydde nettsider som konverterer"
     />
+    <!-- Fyll inn når dere har kontoer -->
+    <!-- <meta name="twitter:site" content="@pareo" />
+    <meta name="twitter:creator" content="@benedictnotoane" /> -->
 
     <!-- PWA / theming -->
-    <meta name="theme-color" content="#0b0b0c" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/img/icons/pareo-alt-logo.svg"
+    <meta
+      name="theme-color"
+      content="#0f172a"
+      media="(prefers-color-scheme: dark)"
     />
-    <link rel="apple-touch-icon" href="/img/icons/icon-192.png" />
+    <meta
+      name="theme-color"
+      content="#f1f5f9"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=no" />
 
-    <!-- Structured Data (Organization/Service) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,6 +129,8 @@
           { "@type": "Person", "name": "Benedict Notoane" },
           { "@type": "Person", "name": "Shahram Jabari" }
         ],
+        "foundingDate": "2025",
+        "sameAs": ["https://github.com/bennicodes?tab=repositories"],
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -95,22 +140,23 @@
             "areaServed": "NO",
             "availableLanguage": ["nb", "en"]
           }
-        ],
-        "sameAs": ["https://github.com/bennicodes?tab=repositories"]
+        ]
       }
     </script>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
+        "@type": "ProfessionalService",
         "name": "Pareo",
         "url": "https://pareodesign.no/",
-        "inLanguage": "nb-NO"
+        "serviceType": "Nettsidedesign og utvikling",
+        "areaServed": "NO",
+        "provider": { "@type": "Organization", "name": "Pareo" }
       }
     </script>
 
-    <!-- Vite -->
+    <!-- Build tool -->
     <meta name="generator" content="Vite" />
   </head>
   <body>
