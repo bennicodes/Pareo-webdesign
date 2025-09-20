@@ -1,8 +1,4 @@
-import {
-  faLinkedin,
-  faSquareFacebook,
-  // faSquareInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Footer.module.css";
 
@@ -27,17 +23,17 @@ const Footer = () => {
         </div>
 
         <div className={styles.right}>
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-        aria-label="LinkedIn"
-      >
-        <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
-        LinkedIn
-      </a>
-      {/* <a
+          <a
+            href="https://www.linkedin.com/company/pareowebdesign/?viewAsMember=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
+            LinkedIn
+          </a>
+          {/* <a
         href="#"
         target="_blank"
         rel="noopener noreferrer"
@@ -47,7 +43,7 @@ const Footer = () => {
         <FontAwesomeIcon className={styles.linkIcon} icon={faSquareInstagram} />
         Instagram
       </a> */}
-      <a
+          {/* <a
         href="#"
         target="_blank"
         rel="noopener noreferrer"
@@ -56,8 +52,8 @@ const Footer = () => {
       >
         <FontAwesomeIcon className={styles.linkIcon} icon={faSquareFacebook} />
         Facebook
-      </a>
-    </div>
+      </a> */}
+        </div>
       </div>
     </footer>
   );
