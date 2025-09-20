@@ -21,6 +21,7 @@
 }
 
 .descriptionText {
+  color: var(--text-color);
   text-align: start;
   padding: 0 var(--spacing-large);
 }

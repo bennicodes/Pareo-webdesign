@@ -51,7 +51,6 @@ function App() {
           <p>
             Vi starter med å bli kjent med deg og din bedrift. Dette innebærer:
           </p>
-          <p></p>
           <Description />
         </section>
         {/* ---------------------------- */}
