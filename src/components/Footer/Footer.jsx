@@ -1,4 +1,7 @@
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faSquareInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Footer.module.css";
 
@@ -33,16 +36,19 @@ const Footer = () => {
             <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
             LinkedIn
           </a>
-          {/* <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-        aria-label="Instagram"
-      >
-        <FontAwesomeIcon className={styles.linkIcon} icon={faSquareInstagram} />
-        Instagram
-      </a> */}
+          <a
+            href="https://www.instagram.com/pareo_webdesign/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon
+              className={styles.linkIcon}
+              icon={faSquareInstagram}
+            />
+            Instagram
+          </a>
           {/* <a
         href="#"
         target="_blank"
