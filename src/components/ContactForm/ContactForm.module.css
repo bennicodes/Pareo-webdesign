@@ -33,6 +33,7 @@
 .inputWrapper input,
 textarea {
   background-color: transparent;
+  color: var(--text-color);
   border: 1px solid #ccc;
   font-size: var(--base-font);
   width: 100%;
@@ -51,7 +52,6 @@ textarea {
   height: 150px;
   padding: 8px;
   resize: vertical;
-  font-size: var(--small-font);
 }
 .inputWrapper input:focus,
 .inputWrapper textarea:focus {
