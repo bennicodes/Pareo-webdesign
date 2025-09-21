@@ -27,7 +27,7 @@ const Footer = () => {
 
         <div className={styles.right}>
           <a
-            href="https://www.linkedin.com/company/pareowebdesign/?viewAsMember=true"
+            href="https://www.linkedin.com/company/pareowebdesign/"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialLink}
