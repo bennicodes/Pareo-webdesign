@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { usePageTitle } from "./hooks/usePageTitles.js";
+import useScrollToTop from "./hooks/useScrollToTop.js";
 
 function App() {
   const contactSectionRef = useRef(null);
@@ -16,6 +17,8 @@ function App() {
     contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  useScrollToTop();
+
   return (
     <div className={styles.rootContainer}>
       <div className={styles.navbarContainer}>
@@ -23,7 +26,7 @@ function App() {
       </div>
       <Header>
         <div className={styles.headerContainer}>
-          <h1>Nettsider som gjør inntrykk – og konverterer.</h1>
+          <h1>Nettsider som gjør inntrykk</h1>
           <p>
             Pareo er et moderne designbyrå som bygger skreddersydde nettsider
             for å styrke din synlighet og troverdighet på nett.
