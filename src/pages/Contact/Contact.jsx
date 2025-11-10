@@ -4,10 +4,13 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Navbar from "../../components/Navbar/Navbar";
 import { usePageTitle } from "../../hooks/usePageTitles";
+import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./Contact.module.css";
 
 const Contact = () => {
   usePageTitle("Kontakt oss – Pareo");
+
+  useScrollToTop();
 
   return (
     <div className={styles.contactContainer}>

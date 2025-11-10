@@ -4,6 +4,7 @@ import Accordion from "../../components/Accordion/Accordion";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { usePageTitle } from "../../hooks/usePageTitles";
+import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./Services.module.css";
 
 const servicesList = [
@@ -41,6 +42,8 @@ const Services = () => {
   const navigateToContact = () => {
     navigate("/kontakt");
   };
+
+  useScrollToTop();
 
   return (
     <div className={styles.pageContainer}>

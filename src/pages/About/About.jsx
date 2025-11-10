@@ -4,6 +4,7 @@ import AboutDescription from "../../components/AboutDescription/AboutDescription
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { usePageTitle } from "../../hooks/usePageTitles";
+import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./About.module.css";
 
 const About = () => {
@@ -17,6 +18,8 @@ const About = () => {
   const navigateToServices = () => {
     navigate("/tjenester");
   };
+
+  useScrollToTop();
 
   return (
     <div className={styles.pageContainer}>
