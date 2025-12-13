@@ -26,10 +26,11 @@ function App() {
       </div>
       <Header>
         <div className={styles.headerContainer}>
-          <h1>Nettsider som gjør inntrykk</h1>
+          <h1>Webdesign og nettsider for bedrifter i Norge</h1>
           <p>
-            Pareo er et moderne designbyrå som bygger skreddersydde nettsider
-            for å styrke din synlighet og troverdighet på nett.
+            Pareo er et webbyrå som lager skreddersydde nettsider for bedrifter
+            i Norge. Vi tilbyr moderne, brukervennlig webdesign som øker
+            synlighet, tillit og konverteringer.
           </p>
 
           <Button

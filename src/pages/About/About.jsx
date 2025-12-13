@@ -31,8 +31,8 @@ const About = () => {
         <section className={styles.hero}>
           <h1>To utviklere. Ett lag. Én visjon.</h1>
           <p>
-            Vi bygger moderne nettsider med presisjon, lidenskap og samarbeid i
-            sentrum.
+            Vi bygger moderne nettsider og digitale løsninger for norske
+            bedrifter med presisjon, lidenskap og samarbeid i sentrum.
           </p>
           <button onClick={navigateToServices}>Se hva vi tilbyr</button>
         </section>
