@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
@@ -6,13 +6,24 @@ import Description from "./components/Description/Description.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 import { usePageTitle } from "./hooks/usePageTitles.js";
 import useScrollToTop from "./hooks/useScrollToTop.js";
 
 function App() {
   const contactSectionRef = useRef(null);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   usePageTitle("Pareo – Nettsider som gjør inntrykk og konverterer");
+
   const scrollToContactSection = () => {
     contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -20,9 +31,10 @@ function App() {
   useScrollToTop();
 
   return (
-    <div className={styles.rootContainer}>
+    <div className={styles.rootContainer} data-theme={theme}>
       <div className={styles.navbarContainer}>
-        <Navbar />
+        <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
+        <ScrollToTop />
       </div>
       <Header>
         <div className={styles.headerContainer}>
@@ -58,12 +70,46 @@ function App() {
           <Description />
         </section>
         {/* ---------------------------- */}
+        {/* --- Contact Section --- */}
         <section className={styles.contactSection} ref={contactSectionRef}>
-          <h2 className={styles.contactTitle}>Kontakt Oss</h2>
-          <p className={styles.contactDescription}>
-            Har du spørsmål? Send en uforpliktende henvendelse. Så tar vi
-            kontakt så fort som mulig.
-          </p>
+          <div className={styles.contactInfo}>
+            <h2 className={styles.contactTitle}>Kontakt Oss</h2>
+            <p className={styles.contactDescription}>
+              Klar for en ny nettside? Slik går vi frem når du sender en
+              henvendelse:
+            </p>
+
+            <ol className={styles.recipeList}>
+              <li>
+                <div>
+                  <strong>Send henvendelse</strong>
+                  <p>
+                    Fyll ut skjemaet med navn, e-post og en kort beskrivelse av
+                    prosjektet.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Uforpliktende prat</strong>
+                  <p>
+                    Vi tar kontakt innen 24 timer for å avtale en kort samtale
+                    om dine behov.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <strong>Løsningsforslag</strong>
+                  <p>
+                    Vi sender deg et konkret tilbud og en plan for din nye
+                    nettside.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
           <div className={styles.contactFormContainer}>
             <ContactForm />
           </div>

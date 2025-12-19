@@ -1,58 +1,76 @@
 .description {
   width: 100%;
-  display: flex;
-  align-items: center;
+  display: grid;
+  /* Creates a 3-column layout on desktop */
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
   padding: var(--spacing-large) 0;
-}
-.descriptionHeading {
-  padding-bottom: var(--spacing-medium);
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-}
-.descriptionHeading::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background-color: var(--secondary-background-color);
-  display: block;
-  margin: 0.5rem auto 1.5rem;
-  border-radius: 2px;
+  list-style: none;
 }
 
 .descriptionText {
   color: var(--text-color);
-  text-align: start;
-  padding: 0 var(--spacing-large);
+  text-align: left;
+  padding: var(--spacing-large);
+  background: var(--card-bg); /* Use the same bg as your form */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--form-shadow); /* Reusing your new shadow variable */
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
-.middleDescription {
-  border-left: 1px solid var(--text-color);
-  border-right: 1px solid var(--text-color);
+
+.descriptionText:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.descriptionHeading {
+  font-size: 1.25rem;
+  padding-bottom: var(--spacing-small);
+  font-family: var(--primary-font);
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* The accent line under the heading */
+.descriptionHeading::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: var(--accent-color);
+  display: block;
+  margin: 0.75rem 0 1.25rem;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.descriptionText:hover .descriptionHeading::after {
+  width: 60px; /* Animate the line on hover */
+}
+
+.descriptionText p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  font-weight: 300;
 }
 
 /* ------------------------ */
-@media screen and (max-width: 768px) {
+/* Tablet & Small Desktop */
+@media screen and (max-width: 1024px) {
   .description {
-    padding: var(--spacing-medium) 0;
-  }
-  .descriptionText {
-    padding: 0 var(--spacing-medium);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
   }
 }
 
-@media screen and (max-width: 600px) {
+/* Mobile */
+@media screen and (max-width: 650px) {
   .description {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-large);
+    grid-template-columns: 1fr; /* 1 column stack */
+    gap: var(--spacing-medium);
   }
-  .descriptionHeading {
-    text-align: center;
-  }
-  .middleDescription {
-    border: none;
-    border-top: 1px solid var(--text-color);
-    border-bottom: 1px solid var(--text-color);
-    padding: var(--spacing-large) 0;
+
+  .descriptionText {
+    padding: var(--spacing-medium);
   }
 }

@@ -16,9 +16,6 @@ const Footer = () => {
               kontaktpareo@gmail.com
             </a>
           </p>
-          {/* <p> */}
-          {/* Telefon: <a href="tel:40460571">404 60 571</a> */}
-          {/* </p> */}
         </div>
 
         <div className={styles.center}>
@@ -30,35 +27,25 @@ const Footer = () => {
             href="https://www.linkedin.com/company/pareowebdesign/"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.socialLink}
+            className={`${styles.socialLink} ${styles.linkedin}`}
+            data-label="LinkedIn"
             aria-label="LinkedIn"
           >
             <FontAwesomeIcon className={styles.linkIcon} icon={faLinkedin} />
-            LinkedIn
           </a>
           <a
             href="https://www.instagram.com/pareo_webdesign/"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.socialLink}
+            className={`${styles.socialLink} ${styles.instagram}`}
+            data-label="Instagram"
             aria-label="Instagram"
           >
             <FontAwesomeIcon
               className={styles.linkIcon}
               icon={faSquareInstagram}
             />
-            Instagram
           </a>
-          {/* <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.socialLink}
-        aria-label="Facebook"
-      >
-        <FontAwesomeIcon className={styles.linkIcon} icon={faSquareFacebook} />
-        Facebook
-      </a> */}
         </div>
       </div>
     </footer>

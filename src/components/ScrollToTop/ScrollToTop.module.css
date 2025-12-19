@@ -1,0 +1,65 @@
+.scrollWrapper {
+  position: fixed;
+
+  top: 93px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+
+  z-index: 1000;
+
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+.scrollWrapper.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.scrollBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: var(--text-color);
+  padding: 6px 20px 10px 20px;
+
+  /* Remove top border and top radius to "fuse" it */
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+  font-family: var(--primary-font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.scrollWrapper.visible .scrollBtn {
+  box-shadow: 0 4px 15px -5px rgba(var(--accent-rgb), 0.3);
+}
+
+.scrollBtn:hover {
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  padding-top: 10px; /* Slightly "grows" on hover */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 850px) {
+  .scrollWrapper {
+    /* Matches your mobile navbar height (60px) + wrapper padding */
+    top: 84px;
+  }
+}

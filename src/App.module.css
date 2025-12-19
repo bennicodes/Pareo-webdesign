@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .rootContainer {
   max-width: 100%;
   min-width: 340px;
@@ -5,75 +16,78 @@
   height: 100%;
   min-height: 100vh;
   background-color: var(--background-color);
-  overflow: hidden;
   font-family: var(--primary-font), sans-serif;
+  transition: background-color 0.4s ease;
 }
 
 /* Header -------------- */
 .header {
-  width: 100%;
-  background: linear-gradient(
-    to top,
-    var(--secondary-background-color) 0%,
-    var(--navbar-background) 100%
-  );
-  color: var(--secondary-text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--spacing-xl);
-  font-family: var(--primary-font);
-}
-.headerContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: var(--spacing-large);
-}
-.headerContainer h1 {
-  font-size: var(--xl-font);
-  margin-bottom: var(--spacing-medium);
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-}
-.headerContainer p {
-  font-size: var(--medium-font);
-  max-width: 580px;
-  margin: 0 auto 2.5rem;
-  padding: var(--spacing-medium) 0;
-  text-align: center;
-  line-height: 1.7;
-}
-
-.headerContainer .contactButton {
-  background-color: var(--header-button-color);
-  color: var(--secondary-text-color);
-  height: 48px;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-medium);
-  padding: var(--spacing-small) var(--spacing-large);
-  border: none;
-  font-weight: 600;
+  padding-top: 160px;
+  padding-bottom: 80px;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center the hero content */
+  margin-top: var(--spacing-xl);
+  position: relative;
+}
+
+.headerContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 300px;
+  background: var(--accent-color);
+  filter: blur(150px);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Header Content */
+.headerContainer h1 {
+  font-size: clamp(2.8em, 8vw, 4.5rem); /* Responsive font size */
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(
+    to bottom right,
+    var(--text-color),
+    var(--accent-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: 900px;
+  margin-bottom: var(--spacing-medium);
+  font-family: var(--primary-font), sans-serif;
+}
+
+.headerContainer p {
+  font-size: var(--medium-font);
+  color: var(--secondary-text); /* Use the softer grey/navy variable */
+  max-width: 650px;
+  line-height: 1.6;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.headerContainer .contactButton {
+  background-color: var(--cta-bg) !important;
+  color: var(--background-color) !important; /* Inverts based on theme */
+  padding: var(--spacing-medium) 2.5rem !important;
+  font-size: 1.1rem;
+  border-radius: 100px !important; /* Pill shape is more modern */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .headerContainer .contactButton:hover {
-  background-color: var(--header-button-hover);
-  color: var(--secondary-text-color);
-  box-shadow: 0 0 8px var(--background-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Header Description */
-.headerDescription .description {
-  font-size: var(--medium-font);
-  max-width: 500px;
-  margin-top: var(--spacing-large);
-  text-align: center;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--accent-color);
 }
 
 /* Main -------------- */
@@ -81,65 +95,176 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-large);
+  gap: 6rem; /* More breathing room between sections looks more 'advanced' */
   padding: 0 var(--spacing-xl);
-  font-family: var(--primary-font);
+}
+
+.main section {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 /* Description ------------ */
+/* Container for your Description component */
 .descriptionSection {
   color: var(--text-color);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-large);
+  max-width: 1200px; /* Center the grid on wide screens */
+  margin: 0 auto;
   padding: var(--spacing-xl) 0;
 }
+
 .descriptionTitle,
 .contactTitle {
   font-family: var(--primary-font), sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #0f172a;
+  /* Keep this smaller than the Hero H1 */
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-medium);
+  color: var(--text-color); /* Use variable instead of #0f172a */
   position: relative;
 }
 
+/* Modern version of the underline */
 .descriptionTitle::after,
 .contactTitle::after {
   content: "";
-  width: 60px;
+  width: 40px;
   height: 4px;
-  background-color: var(--secondary-background-color);
+  background-color: var(
+    --accent-color
+  ); /* Modern Cyan/Blue instead of the old blue */
   display: block;
-  margin: 0.5rem 0;
-  border-radius: 2px;
+  margin-top: 0.75rem;
+  border-radius: 10px;
 }
 
 /* Contact ---------------- */
 .contactSection {
   color: var(--text-color);
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: var(--spacing-xl);
+  scroll-margin-top: 120px;
+}
+.contactInfo {
   display: flex;
   flex-direction: column;
-  padding-bottom: var(--spacing-xl);
+  text-align: left;
 }
-.contactDescription {
-  width: 50%;
-  padding: var(--spacing-medium) 0;
-  margin-bottom: var(--spacing-medium);
+
+.recipeList {
+  list-style: none; /* We hide the default so we can custom style it */
+  counter-reset: recipe-counter; /* Initialize the counter */
+  padding: 0;
+  margin-top: var(--spacing-large);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
+
+.recipeList li {
+  counter-increment: recipe-counter; /* Increment on every li */
+  display: flex;
+  gap: var(--spacing-medium);
+  align-items: flex-start;
+  padding-bottom: var(--spacing-small);
+  position: relative;
+}
+
+/* This replaces the manual stepNumber span */
+.recipeList li::before {
+  content: "0" counter(recipe-counter); /* Automatically adds 01, 02, 03 */
+  font-family: var(--primary-font);
+  font-weight: 800;
+  font-size: 0.85rem;
+
+  color: var(--accent-color);
+  background: var(--step-bg);
+  border: 1px solid var(--step-border);
+
+  padding: 6px 10px;
+  border-radius: 8px;
+  line-height: 1;
+  min-width: 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.recipeList li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+
+  left: 17.5px;
+  top: 32px;
+  bottom: -15px;
+
+  width: 2px;
+  background-color: var(--connector-line);
+  z-index: 0;
+}
+
+.recipeList li div {
+  padding-top: 2px;
+}
+
+.recipeList strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--text-color);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.recipeList p {
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
 .contactFormContainer {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
 }
 
+/* Mobile fix for the new grid */
+@media screen and (max-width: 900px) {
+  .contactSection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contactInfo {
+    text-align: center;
+    align-items: center;
+  }
+
+  .recipeList li {
+    text-align: left;
+    max-width: 450px;
+  }
+
+  .contactTitle::after {
+    margin: 0.75rem auto 0; /* Center the underline on mobile */
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header {
     padding: var(--spacing-large);
+  }
+  .headerContainer h1 {
+    .headerContainer h1 {
+      font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
   }
   .headerDescription {
     width: 75%;
@@ -161,7 +286,13 @@
 
 @media screen and (max-width: 525px) {
   .headerContainer h1 {
-    font-size: var(--large-font);
+    font-size: 2.4rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .headerContainer p {
+    font-size: 1.05rem; /* Ensure the sub-text stays readable */
+    padding: 0 10px;
   }
   .headerDescription {
     width: 100%;

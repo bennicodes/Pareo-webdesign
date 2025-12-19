@@ -1,184 +1,255 @@
-.navbarContainer {
-  width: 100%;
-  height: 64px;
-  color: var(--secondary-text-color);
-  padding: var(--spacing-medium);
-  font-family: var(--primary-font);
-  position: relative;
+/* Add a subtle "pulse" to attract the eye without being annoying */
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(var(--accent-rgb), 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+  }
 }
-.navbar {
-  width: 100%;
-  max-height: 100%;
-  background-color: var(--navbar-background);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.navbarWrapper {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  width: 100%;
+  padding: 1.5rem var(--spacing-large);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
-/* Logo */
+
+.navbar {
+  width: 100%;
+  max-width: 1100px;
+  height: 70px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
 .logoContainer {
-  height: 64px;
+  height: 100%;
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  min-width: 0;
+  flex: 1;
 }
+
 .logoLink {
-  color: #1c91ff;
-  height: 100%;
-  text-decoration: none;
-  font-size: var(--large-font);
-  font-weight: bold;
-  text-decoration: none;
+  height: 80%; /* Keeps the logo proportional to the bar */
+  display: flex;
+  align-items: center;
 }
-.logo {
+
+.logoSvg {
   height: 100%;
   width: auto;
-  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
-.logoLink:hover,
-.logo:hover {
-  cursor: pointer;
+.logoSvg text {
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Links */
+/* Nav Links */
 .navLinks {
   display: flex;
-  align-items: center;
-  gap: var(--spacing-medium);
-  padding-right: var(--spacing-large);
+  gap: var(--spacing-large);
+  list-style: none;
+  transition: all 0.4s ease;
+  flex: 1;
 }
+
 .navLinks a {
-  color: var(--secondary-text-color);
-  font-size: var(--medium-font);
   text-decoration: none;
-}
-.navLinks a:hover {
-  color: var(--secondary-color);
-  transition: 0.2s ease;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
+.navLinks a:hover,
 .navLinks a.active {
-  border-bottom: 1px solid var(--secondary-text-color);
-}
-.navLinks a.active:hover {
-  border-bottom: 1px solid var(--secondary-color);
+  opacity: 1;
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 
-.contactLink {
-  min-height: 39px;
+/* Actions & Buttons */
+.actions {
+  display: flex;
+  align-items: center;
+}
+/* Mobile Menu Adjustments */
+.menuButton {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: var(--spacing-small);
+}
+
+.themeToggle {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background-color: transparent;
+  border: none;
+  padding: 0 var(--spacing-small);
+  margin-right: var(--spacing-medium);
+
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-large);
-  padding: var(--spacing-small);
-  background: linear-gradient(
-    270deg,
-    var(--secondary-color),
-    var(--secondary-text-color),
-    var(--secondary-color)
-  );
-  background-size: 400% 400%;
-  animation: var(--glide-animation) 8s ease infinite;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
-.navLinks .contactLink:hover {
-  background: var(--secondary-color);
-  color: var(--secondary-text-color);
-  box-shadow: 0 0 8px var(--secondary-color);
-  transition: 0.2s ease;
+.themeToggle.active {
+  transform: rotate(180deg) scale(0.95);
 }
 
-/* Menu */
-.menuButton {
-  background-color: transparent;
-  display: none;
+.contactButton {
+  position: relative;
+  background: var(--text-color);
+  color: var(--background-color);
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+  overflow: hidden;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  padding: var(--spacing-small);
-  z-index: 10;
-  transition: 0.2s ease;
-}
-.menuButton:hover {
-  background-color: var(--secondary-color);
-  color: var(--secondary-text-color);
-  transition: 0.2s ease;
-  box-shadow: 0 0 8px var(--background-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  z-index: 1;
 }
 
-.menuIcon {
-  width: 16px;
-  height: auto;
-  z-index: 10;
+/* The Animated Glow Background */
+.contactButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--accent-rgb), 0.5),
+    transparent
+  );
+  transition: 0.5s;
+  z-index: -1;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding: 0 var(--spacing-medium);
-  }
+.contactButton:hover {
+  transform: translateY(-2px) scale(1.03);
+  color: var(--text-color);
+  background: var(--background-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.4);
+}
+
+.contactButton:hover::before {
+  left: 100%;
+}
+
+/* Apply pulse only when NOT hovering so it doesn't fight the hover effect */
+.contactButton:not(:hover) {
+  animation: buttonPulse 2s infinite;
+}
+
+@media (max-width: 850px) {
   .menuButton {
-    color: var(--secondary-text-color);
-    display: flex;
+    display: block;
   }
 
   .navLinks {
-    width: 50%;
-    height: 100vh;
-    background-color: var(--navbar-background);
-    flex-direction: column;
-    justify-content: center;
-    padding-top: var(--spacing-xl);
-    gap: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    transform: translateX(1000%);
-    transition: 0.5s ease;
-    z-index: 1;
-  }
-  .navLinks li {
-    width: 100%;
-    height: 42px;
-    display: flex;
-    align-items: center;
-  }
-  .navLinks a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: var(--spacing-small) var(--spacing-large);
-    font-size: var(--base-font);
-  }
-  .navLinks a:hover {
-    background-color: var(--secondary-background-color);
-    color: var(--secondary-text-color);
-  }
-  .navLinks .contactLink {
-    width: 100%;
-    background: var(--secondary-color);
-    text-align: center;
-    margin: 0 var(--spacing-medium);
-    margin-top: var(--spacing-large);
-  }
-  .navLinks .contactLink:hover {
+    position: absolute;
+    top: 80px; /* Distance from the pill navbar */
+    right: 0.5rem;
     background-color: var(--background-color);
-    color: var(--secondary-color);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-large);
+    border-radius: 24px;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+    /* Animation states */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
   }
 
   .navLinksActive {
-    transform: translateX(0);
-    transition: 0.5s ease;
-    padding: var(--spacing-large) 0;
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .contactButton {
+    display: flex;
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: 0.75rem;
+    margin-right: var(--spacing-medium);
   }
 }
 
-@media screen and (max-width: 425px) {
-  .navLinks {
-    width: 100%;
+/* Mobile Menu Adjustments */
+@media (max-width: 475px) {
+  .navbar {
+    padding: 0 0.75rem; /* Reduce side padding inside the pill */
+    height: 60px; /* Slightly shorter bar to look better on small phones */
+  }
+
+  .logoLink {
+    height: 65%; /* Shrink logo slightly to make room */
+  }
+  .logoSvg text {
+    font-size: 42px; /* Adjust logo text size for small screens */
+  }
+
+  .actions {
+    gap: 4px; /* Tighten space between theme toggle and button */
+  }
+
+  .contactButton {
+    /* Prevent the button from deforming */
+    flex-shrink: 0;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+    white-space: nowrap; /* Forces text to stay on one line */
+    margin-right: 5px;
+  }
+
+  .themeToggle {
+    margin-right: 0;
+    padding: 0 4px;
+    font-size: 1rem;
+  }
+
+  .menuButton {
+    padding: 4px;
   }
 }
