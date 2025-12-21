@@ -126,7 +126,7 @@
 
 .detailsSidebar h2 {
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
+  margin: var(--spacing-medium) 0;
   color: var(--text-color);
 }
 
