@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
@@ -7,20 +7,14 @@ import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
+import { useTheme } from "./Context/ThemeContext";
 import { usePageTitle } from "./hooks/usePageTitles.js";
 import useScrollToTop from "./hooks/useScrollToTop.js";
 
 function App() {
   const contactSectionRef = useRef(null);
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
+  const { theme, toggleTheme } = useTheme();
 
   usePageTitle("Pareo – Nettsider som gjør inntrykk og konverterer");
 

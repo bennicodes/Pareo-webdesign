@@ -1,69 +1,76 @@
 .servicesList {
   width: 100%;
-  min-height: 300px;
-  flex-grow: 1;
   display: flex;
-  align-items: start;
+  align-items: stretch; /* Makes all cards the same height */
   gap: var(--spacing-large);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-medium);
+}
+
+.serviceBox {
+  flex: 1;
+  background-color: var(--card-bg);
+  padding: var(--spacing-xl) var(--spacing-large);
+  border-radius: var(--border-radius-large);
+
+  /* High-end border and shadow */
+  border: 1px solid rgba(var(--accent-rgb), 0.1);
+  box-shadow: 0 4px 20px -10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover Effect: The card "lifts" and the border brightens */
+.serviceBox:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
 }
 
 .serviceHeading {
-  text-align: center;
-  font-family: var(--primary-font), sans-serif;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: var(--spacing-small);
 }
 
 .serviceHeading::after {
   content: "";
-  width: 60px;
-  height: 4px;
-  background-color: var(--secondary-background-color);
+  width: 30px; /* Shorter line looks more modern */
+  height: 3px;
+  background-color: var(--accent-color);
   display: block;
-  margin: 0.5rem auto 1.5rem;
-  border-radius: 2px;
+  margin: 0.8rem auto;
+  border-radius: var(--border-radius-large);
 }
 
-.serviceBox {
-  background-color: var(--secondary-text-color);
-  min-height: 300px;
-  /* height: 100%; */
-  flex: 1;
-  text-align: start;
-  padding: var(--spacing-large) var(--spacing-medium);
-  border-radius: var(--border-radius-medium);
-  box-shadow: 0 0 8px grey;
+.serviceBox p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  margin: 0;
 }
 
-/* ------------------------ */
-@media screen and (max-width: 950px) {
-    .serviceBox{
-        min-height: 375px;
-    }
-}
-@media screen and (max-width: 768px) {
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 950px) {
   .servicesList {
-    padding: var(--spacing-medium) 0;
+    gap: var(--spacing-medium);
   }
+}
 
-  .serviceHeading::after {
-    margin: 0.5rem auto 1.5rem;
+@media (max-width: 768px) {
+  .servicesList {
+    flex-direction: column;
+    gap: var(--spacing-medium);
   }
 
   .serviceBox {
-    min-height: 0;
     width: 100%;
-    padding: var(--spacing-medium);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .servicesList {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-large);
-  }
-
-  .serviceHeading {
-    text-align: center;
+    padding: var(--spacing-large);
   }
 }

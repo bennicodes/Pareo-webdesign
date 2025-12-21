@@ -14,6 +14,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 a,
 button {
   cursor: pointer;
@@ -35,6 +39,7 @@ button {
   --logo-text-inside: #ffffff;
 
   --background-color: #f8fafc; /* Subtle Ice Blue */
+  --bg-rgb: 248, 250, 252;
   --navbar-bg: rgba(var(--bg-rgb), 0.7);
   --card-bg: #ffffff;
   --accent-color: #38bdf8; /* Professional Blue */
@@ -58,6 +63,8 @@ button {
   --logo-text-inside: #ffffff;
 
   --background-color: #020617; /* Midnight Navy */
+  --bg-rgb: 2, 6, 23;
+  --navbar-bg: rgba(var(--bg-rgb), 0.7);
   --card-bg: #0f172a; /* Deep Navy Card */
   --accent-color: #00e5ff; /* Electric Cyan */
   --accent-rgb: 0, 229, 255; /* Electric Cyan in RGB */

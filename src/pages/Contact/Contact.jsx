@@ -3,53 +3,82 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Navbar from "../../components/Navbar/Navbar";
+import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./Contact.module.css";
 
 const Contact = () => {
   usePageTitle("Kontakt oss – Pareo");
+  const { theme, toggleTheme } = useTheme();
 
   useScrollToTop();
 
   return (
-    <div className={styles.contactContainer}>
-      <Navbar />
+    <div className={styles.pageWrapper} data-theme={theme}>
+      {/* The Header now contains both the Nav and the Hero branding */}
+      <header className={styles.heroHeader}>
+        <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
 
-      <Header>
-        <div className={styles.headerContent}>
+        <div className={styles.heroContent}>
           <h1>Kontakt oss</h1>
-          <p>
+          <p className={styles.heroDescription}>
             Har du spørsmål, ideer eller ønsker å samarbeide? Vi svarer så fort
             vi kan.
           </p>
         </div>
-      </Header>
+      </header>
 
-      <main className={styles.mainContent}>
-        <section className={styles.formSection}>
-          <h2>Send en henvendelse</h2>
-          <p>Fyll inn skjemaet så tar vi kontakt med deg så raskt som mulig.</p>
-          <div className={styles.formContainer}>
-            <ContactForm />
-          </div>
-        </section>
+      <main className={styles.contactMain}>
+        <div className={styles.splitLayout}>
+          <section className={styles.openFormSection}>
+            <div className={styles.formHeader}>
+              <h2>Send en henvendelse</h2>
+              <p>
+                Fyll inn skjemaet så tar vi kontakt med deg så raskt som mulig.
+              </p>
+            </div>
+            <div className={styles.formWrapper}>
+              <ContactForm />
+            </div>
+          </section>
 
-        <section className={styles.infoSection}>
-          <h2>Andre måter å nå oss på</h2>
-          <ul>
-            <li>
-              📧{" "}
-              <a href="mailto:kontaktpareo@gmail.com">kontaktpareo@gmail.com</a>
-            </li>
-            <li>📍 Oslo, Norge</li>
-            <li>⏰ Vi er tilgjengelige digitalt hele uken</li>
-          </ul>
-        </section>
+          {/* Sidebar stays as a solid anchor */}
+          <aside className={styles.detailsSidebar}>
+            <h2>Direkte kontakt</h2>
+            {/* Email Block */}
+            <div className={styles.infoBlock}>
+              <div className={styles.iconCircle}>📧</div>
+              <div className={styles.infoText}>
+                <span>E-post</span>
+                <a href="mailto:kontaktpareo@gmail.com">
+                  kontaktpareo@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Location Block */}
+            <div className={styles.infoBlock}>
+              <div className={styles.iconCircle}>📍</div>
+              <div className={styles.infoText}>
+                <span>Lokasjon</span>
+                <p>Oslo, Norge</p>
+              </div>
+            </div>
+
+            {/* Availability Block */}
+            <div className={styles.infoBlock}>
+              <div className={styles.iconCircle}>⏰</div>
+              <div className={styles.infoText}>
+                <span>Tilgjengelighet</span>
+                <p>Digitalt hele uken</p>
+              </div>
+            </div>
+          </aside>
+        </div>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+
+      <Footer />
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import AboutDescription from "../../components/AboutDescription/AboutDescription";
+import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./About.module.css";
@@ -19,24 +21,25 @@ const About = () => {
     navigate("/tjenester");
   };
 
+  const { theme, toggleTheme } = useTheme();
+
   useScrollToTop();
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} data-theme={theme}>
       <header className={styles.header}>
-        <Navbar />
-      </header>
-
-      <main>
+        <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
         <section className={styles.hero}>
           <h1>To utviklere. Ett lag. Én visjon.</h1>
           <p>
             Vi bygger moderne nettsider og digitale løsninger for norske
             bedrifter med presisjon, lidenskap og samarbeid i sentrum.
           </p>
-          <button onClick={navigateToServices}>Se hva vi tilbyr</button>
+          <Button onClick={navigateToServices}>Se hva vi tilbyr</Button>
         </section>
+      </header>
 
+      <main>
         <section className={styles.intro}>
           <h2>Hvem er vi?</h2>
           <p>
@@ -80,7 +83,7 @@ const About = () => {
             Vi er alltid åpne for nye samarbeid og spennende prosjekter. Kontakt
             oss gjerne for en uformell prat!
           </p>
-          <button onClick={navigateToContact}>Kontakt oss</button>
+          <Button onClick={navigateToContact}>Kontakt oss</Button>
         </section>
       </main>
       <footer>

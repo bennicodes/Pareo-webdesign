@@ -2,10 +2,13 @@ import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Link, NavLink } from "react-router";
+import { useTheme } from "../../Context/ThemeContext";
 import styles from "./Navbar.module.css";
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
+
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className={styles.navbarWrapper}>
@@ -88,7 +91,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
         <div className={styles.actions}>
           {/* Theme Toggle */}
-          <button className={styles.themeToggle} onClick={setIsDarkMode}>
+          <button
+            className={styles.themeToggle}
+            onClick={setIsDarkMode}
+            type="button"
+          >
             <FontAwesomeIcon icon={isDarkMode === "dark" ? faSun : faMoon} />
           </button>
 

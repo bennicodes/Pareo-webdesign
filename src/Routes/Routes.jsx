@@ -10,11 +10,11 @@ import Services from "../pages/Services/Services";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route index element={<App />} />
+    <>
+      <Route path="/" element={<App />} />
       <Route path="/kontakt" element={<Contact />} />
       <Route path="/om-oss" element={<About />} />
       <Route path="/tjenester" element={<Services />} />
-    </Route>
+    </>
   )
 );
