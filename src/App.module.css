@@ -70,7 +70,7 @@
 
 .headerContainer p {
   font-size: var(--medium-font);
-  color: var(--secondary-text); /* Use the softer grey/navy variable */
+  color: var(--secondary-text);
   max-width: 650px;
   line-height: 1.6;
   margin: 1.5rem 0 2.5rem 0;
