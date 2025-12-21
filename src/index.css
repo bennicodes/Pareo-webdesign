@@ -2,11 +2,20 @@
   font-family: Inter-Regular;
   src: url(/fonts/Inter-Regular.ttf);
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a,
@@ -16,49 +25,57 @@ button {
 
 /* Variables */
 :root {
-  /* Colors */
-  --text-color: #000;
-  --secondary-text-color: #fff;
-  --background-color: #f1f5f9;
-  --secondary-background-color: #2563eb;
-  --navbar-background: #0f172a;
-  --primary-color: #3c3c3c;
-  /* Buttons */
-  --secondary-color: #0084ff;
-  --header-button-color: #10b981;
-  --header-button-hover: #059669;
-
-  /* Spacing */
+  /* Common Spacing & Fonts */
   --spacing-small: 0.5rem;
   --spacing-medium: 1rem;
   --spacing-large: 2rem;
   --spacing-xl: 4rem;
-
-  /* Font */
-  --primary-font: Inter-Regular, sans-serif;
-  --small-font: 0.75rem;
-  --base-font: 1rem;
-  --medium-font: 1.2rem;
-  --large-font: 2rem;
-  --xl-font: 3rem;
-
-  /* Border */
-  --border-radius-small: 4px;
-  --border-radius-medium: 8px;
+  --primary-font: "Inter-Regular", sans-serif;
   --border-radius-large: 16px;
 
-  /* Animations */
-  --glide-animation: gradientAnimation;
+  /* LIGHT MODE (Ice Sea) */
+  --text-color: #0f172a; /* Deep Navy Text */
+  --secondary-text: #475569;
+  --logo-text-inside: #ffffff;
+
+  --background-color: #f8fafc; /* Subtle Ice Blue */
+  --bg-rgb: 248, 250, 252;
+  --navbar-bg: rgba(var(--bg-rgb), 0.7);
+  --card-bg: #ffffff;
+  --accent-color: #38bdf8; /* Professional Blue */
+  --accent-rgb: 56, 189, 248; /* Blue accent in RGB */
+  --cta-bg: #0f172a;
+  --cta-hover: #1e293b;
+
+  --border-color: rgba(0, 0, 0, 0.05);
+  --form-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.04);
+  --form-border: 1px solid rgba(15, 23, 42, 0.05);
+
+  --step-bg: #e0f2fe;
+  --step-border: rgba(56, 189, 248, 0.3);
+  --connector-line: #cbd5e1;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+[data-theme="dark"] {
+  /* DARK MODE (Deep Sea) */
+  --text-color: #f8fafc;
+  --secondary-text: #94a3b8;
+  --logo-text-inside: #ffffff;
+
+  --background-color: #020617; /* Midnight Navy */
+  --bg-rgb: 2, 6, 23;
+  --navbar-bg: rgba(var(--bg-rgb), 0.7);
+  --card-bg: #0f172a; /* Deep Navy Card */
+  --accent-color: #00e5ff; /* Electric Cyan */
+  --accent-rgb: 0, 229, 255; /* Electric Cyan in RGB */
+  --cta-bg: #38bdf8;
+  --cta-hover: #7dd3fc;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --form-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --form-border: 1px solid var(--border-color);
+
+  --step-bg: rgba(56, 189, 248, 0.1);
+  --step-border: rgba(56, 189, 248, 0.2);
+  --connector-line: rgba(255, 255, 255, 0.1);
 }

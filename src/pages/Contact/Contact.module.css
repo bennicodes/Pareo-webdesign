@@ -1,146 +1,210 @@
-.contactContainer {
+.pageWrapper {
   background-color: var(--background-color);
   min-height: 100vh;
+  width: 100%;
   min-width: 350px;
-  font-family: var(--primary-font);
+  transition: background-color 0.3s ease;
+  font-family: var(--primary-font), sans-serif;
 }
 
-.headerContent {
-  color: var(--secondary-text-color);
+/* --- HERO HEADER --- */
+.heroHeader {
+  width: 100%;
+  min-height: 55vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-large);
-  text-align: center;
-  padding: var(--spacing-xl) var(--spacing-medium);
-}
+  align-items: center;
+  justify-content: flex-start;
 
-.headerContent h1 {
-  font-size: var(--xl-font);
-  margin-bottom: var(--spacing-small);
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
-}
-
-.headerContent p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-.mainContent {
-  padding: var(--spacing-xl) var(--spacing-large);
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-xl);
-  font-family: var(--primary-font);
-}
-
-.formSection {
-  flex-basis: 50%;
-}
-
-.formSection h2 {
-  font-size: var(--large-font);
-  color: var(--text-color);
-  font-weight: 700;
-}
-.formSection h2::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background-color: var(--secondary-background-color);
-  display: block;
-  margin: 0.5rem 0.25rem;
-  border-radius: 2px;
-}
-
-.formSection p {
-  padding: var(--spacing-medium) 0;
-  padding-left: var(--spacing-small);
-}
-
-.formContainer {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.infoSection {
-  height: 100%;
   background: linear-gradient(
-    to top,
-    var(--secondary-background-color) 0%,
-    var(--navbar-background) 100%
+    to bottom,
+    var(--navbar-bg) 0%,
+    var(--step-bg) 40%,
+    var(--background-color) 90%,
+    var(--background-color) 100%
   );
-  color: var(--secondary-text-color);
+
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+  margin-bottom: -5rem;
+}
+
+.heroHeader::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background: var(--accent-color);
+  filter: blur(120px);
+  opacity: 0.25;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroContent {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spacing-large);
-  border-radius: var(--border-radius-medium);
-  flex-basis: 50%;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--spacing-large);
+  z-index: 1;
+  margin-top: -2rem;
+}
+
+.heroContent h1 {
+  color: var(--text-color);
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--spacing-medium);
+}
+
+.heroDescription {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  max-width: 700px;
   margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* --- MAIN CONTENT --- */
+.contactMain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-large) 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.splitLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+.openFormSection {
+  flex: 1.8;
+}
+
+.formHeader {
+  margin-bottom: 2.5rem;
+}
+
+.openFormSection h2 {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* --- SIDEBAR --- */
+.detailsSidebar {
+  min-height: 520px;
+  flex: 1;
+  background-color: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--border-radius-large);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 120px;
   margin-top: 110px;
 }
 
-.infoSection h2 {
-  margin-bottom: var(--spacing-large);
-  color: var(--secondary-text-color);
+.detailsSidebar h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
-.infoSection ul {
-  height: 100%;
-  list-style: none;
-  padding: 0;
+.infoBlock {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-small);
+  align-items: center;
+  gap: 20px;
+  padding: 1.25rem;
+  background: rgba(var(--accent-rgb), 0.05);
+  border-radius: var(--border-radius-medium);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.infoSection a {
-  color: var(--secondary-text-color);
+.infoBlock:hover {
+  background: rgba(var(--accent-rgb), 0.1);
+  border-color: rgba(var(--accent-rgb), 0.2);
+  transform: translateX(8px);
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-color);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.3);
+}
+
+.infoText span {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.infoText p,
+.infoText a {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.infoText a:hover {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
-  .mainContent {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--spacing-xl) var(--spacing-medium);
-  }
-  .formSection h2 {
-    text-align: center;
-  }
-  .formSection h2::after {
-    content: "";
-    width: 60px;
-    height: 4px;
-    background-color: var(--secondary-background-color);
-    display: block;
-    margin: 0.5rem auto 1.5rem;
-    border-radius: 2px;
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 900px) {
+  .heroHeader {
+    min-height: 45vh;
+    margin-bottom: 0;
   }
 
-  .formContainer,
-  .infoSection {
-    flex-basis: 100%;
+  .heroDescription {
+    font-size: 1.2rem;
   }
-  .formContainer {
-    padding: var(--spacing-medium);
+
+  .splitLayout {
+    flex-direction: column;
+    gap: 3rem;
   }
-  .infoSection {
-    width: 75%;
+
+  .detailsSidebar {
+    min-height: 0;
+    position: static;
+    width: 100%;
+    padding: var(--spacing-large) var(--spacing-small);
     margin-top: 0;
   }
 }
-@media screen and (max-width: 550px) {
-  .mainContent {
-    padding: var(--spacing-large) var(--spacing-medium);
-  }
-  .infoSection {
-    width: 90%;
-  }
-}
+/* TODO: Add responsive adjustments for mobile devices */

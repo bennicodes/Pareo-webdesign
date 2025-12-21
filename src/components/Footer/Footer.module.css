@@ -1,89 +1,165 @@
 .footer {
-  min-height: 150px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  background-color: var(--navbar-background);
-  color: hsla(0, 0%, 100%, 0.75);
-  padding: var(--spacing-large) var(--spacing-large);
+  background-color: var(--background-color); /* Match site background */
+  color: var(--secondary-text);
+  padding: var(--spacing-xl);
   font-family: var(--primary-font);
+  border-top: 1px solid var(--border-color); /* Subtle separation line */
 }
 
 .footerContent {
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-xl);
 }
 
 .left,
 .center,
 .right {
   flex: 1;
-  text-align: center;
-}
-.center p {
-  font-size: var(--small-font);
 }
 
 .left {
   text-align: left;
 }
+.mail {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mail:hover {
+  color: var(--accent-color);
+}
+
+.center {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
 
 .right {
   display: flex;
-  justify-content: end;
-  gap: var(--spacing-large);
-  padding-right: var(--spacing-large);
-  text-align: right;
-}
-
-a {
-  color: hsla(0, 0%, 100%, 0.75);
-  transition: color 0.2s ease;
-  text-decoration: none;
-}
-a:hover {
-  color: var(--secondary-color);
-  cursor: pointer;
-}
-
-.mail {
-  text-decoration: underline;
+  justify-content: flex-end;
+  gap: var(--spacing-xl);
 }
 
 /* Social Media */
 .socialLink {
-  color: hsla(0, 0%, 100%, 0.75);
+  position: relative; /* Anchor for the tooltip */
+  color: var(--secondary-text);
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-small);
-  font-size: var(--small-font);
-}
-.socialLink:hover {
-  color: var(--secondary-color);
-  cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
 .linkIcon {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+.socialLink:hover .linkIcon {
+  /* Subtle pop effect when hovering the link */
+  transform: scale(1.1);
 }
 
+/* The Tooltip Box */
+.socialLink::before {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 140%; /* above the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+
+/* The Tooltip Arrow */
+.socialLink::after {
+  content: "";
+  position: absolute;
+  bottom: 105%; /* just above the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent transparent; /* Colors set below */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Hover States */
+.socialLink:hover::before,
+.socialLink:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* --- Brand Specific Colors --- */
+
+/* LinkedIn */
+.linkedin:hover {
+  color: #0077b5;
+}
+.linkedin::before {
+  background-color: #0077b5;
+}
+.linkedin:hover::after {
+  border-top-color: #0077b5;
+}
+
+/* Instagram */
+.instagram:hover {
+  color: #e1306c;
+}
+.instagram::before {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc23b6,
+    #bc1888
+  );
+}
+.instagram:hover::after {
+  border-top-color: #dc2743;
+}
+
+/* --- Responsive Fixes --- */
 @media screen and (max-width: 768px) {
+  .footer {
+    padding: 3rem var(--spacing-large);
+  }
+
   .footerContent {
     flex-direction: column;
-    text-align: center;
+    gap: var(--spacing-large);
   }
 
   .left,
   .center,
   .right {
     text-align: center;
+    justify-content: center;
   }
 
   .right {
-    padding: 0;
+    order: -1; /* Move socials to top on mobile */
   }
 }

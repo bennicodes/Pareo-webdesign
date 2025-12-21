@@ -1,8 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
+import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import styles from "./Services.module.css";
@@ -43,14 +46,15 @@ const Services = () => {
     navigate("/kontakt");
   };
 
+  const { theme, toggleTheme } = useTheme();
+
   useScrollToTop();
 
   return (
-    <div className={styles.pageContainer}>
+    <div className={styles.pageContainer} data-theme={theme}>
       <header className={styles.header}>
-        <Navbar />
-      </header>
-      <main>
+        <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
+        <ScrollToTop />
         <section className={styles.hero}>
           <h1>Våre Tjenester</h1>
           <p>
@@ -59,7 +63,8 @@ const Services = () => {
             webapplikasjoner.
           </p>
         </section>
-
+      </header>
+      <main>
         <section className={styles.services}>
           <h2>Dette kan vi gjøre for deg</h2>
           <p>
@@ -76,7 +81,7 @@ const Services = () => {
             muligheter? Vi tar gjerne en uforpliktende prat – over en kaffe,
             digitalt eller fysisk.
           </p>
-          <button onClick={navigateToContact}>Kontakt oss</button>
+          <Button onClick={navigateToContact}>Kontakt oss</Button>
         </section>
       </main>
       <footer>

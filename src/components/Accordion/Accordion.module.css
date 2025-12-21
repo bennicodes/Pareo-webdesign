@@ -1,62 +1,82 @@
 .accordion {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: var(--spacing-large) 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-medium);
 }
 
 .accordionItem {
-  background-color: #ffffff;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  background-color: var(--card-bg); /* Uses your theme variable */
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--form-shadow);
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
+.accordionItem:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
 .accordionTitle {
+  /* This 'all: unset' removes the global pill-button styles */
+  all: unset;
+  box-sizing: border-box;
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: var(--spacing-medium) var(--spacing-large);
   font-size: 1.1rem;
   font-weight: 600;
   font-family: var(--primary-font);
-  color: #1e293b;
-  background: none;
-  border: none;
-  text-align: left;
+  color: var(--text-color); /* Theme variable */
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .accordionTitle:hover {
-  background-color: #f8fafc;
+  background-color: rgba(var(--accent-rgb), 0.05); /* Subtle tint on hover */
 }
 
 .icon {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #64748b;
+  color: var(--accent-color); /* Match your brand cyan/blue */
 }
 
 .accordionContent {
   text-align: start;
-  padding: 1rem 1.5rem;
+  padding: 0 var(--spacing-large);
   font-size: 1rem;
-  color: #334155;
-  border-top: 1px solid #e2e8f0;
+  line-height: 1.6;
+  color: var(--secondary-text); /* Theme variable */
+  border-top: 1px solid var(--border-color);
 
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out, padding 0.2s ease-in-out;
-  padding-top: 0;
-  padding-bottom: 0;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  opacity: 0;
 }
 
 .accordionContent.open {
-  max-height: 500px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  max-height: 1000px; /* High enough for long text */
+  padding-top: var(--spacing-medium);
+  padding-bottom: var(--spacing-medium);
+  opacity: 1;
+}
+.accordionItem:has(.open) {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .accordionTitle {
+    font-size: 1rem;
+    padding: var(--spacing-medium) var(--spacing-small);
+  }
 }
