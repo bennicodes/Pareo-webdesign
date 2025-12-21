@@ -65,7 +65,7 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  margin-bottom: var(--spacing-medium);
+  margin: var(--spacing-medium) 0;
 }
 
 .heroDescription {
@@ -192,6 +192,9 @@
 
   .heroDescription {
     font-size: 1.2rem;
+  }
+
+  .openFormSection h2 {
   }
 
   .splitLayout {

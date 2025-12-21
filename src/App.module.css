@@ -64,7 +64,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   max-width: 900px;
-  margin-bottom: var(--spacing-medium);
+  margin: var(--spacing-medium) 0;
   font-family: var(--primary-font), sans-serif;
 }
 

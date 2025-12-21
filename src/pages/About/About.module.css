@@ -74,6 +74,7 @@
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: var(--spacing-medium);
+  padding: 0 var(--spacing-medium)
 }
 
 /* Main Content Structure */
