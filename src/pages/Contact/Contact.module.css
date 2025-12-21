@@ -104,7 +104,7 @@
   color: var(--accent-color);
   font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: var(--spacing-medium) 0;
 }
 
 /* --- SIDEBAR --- */
@@ -126,7 +126,7 @@
 
 .detailsSidebar h2 {
   font-size: 1.6rem;
-  margin: var(--spacing-medium) 0;
+  margin-bottom: 0.5rem;
   color: var(--text-color);
 }
 
@@ -194,9 +194,6 @@
     font-size: 1.2rem;
   }
 
-  .openFormSection h2 {
-  }
-
   .splitLayout {
     flex-direction: column;
     gap: 3rem;
@@ -210,4 +207,3 @@
     margin-top: 0;
   }
 }
-/* TODO: Add responsive adjustments for mobile devices */
