@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/Button/Button";
+import FloatInSection from "../../components/FloatInSection/FloatInSection";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
@@ -55,24 +56,31 @@ const Services = () => {
       <header className={styles.header}>
         <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
         <ScrollToTop />
-        <section className={styles.hero}>
-          <h1>Våre Tjenester</h1>
-          <p>
-            Vi hjelper deg med å realisere dine digitale ideer – fra elegante
-            nettsider og webdesign for bedrifter til kraftfulle
-            webapplikasjoner.
-          </p>
-        </section>
+
+        {/* HERO */}
+        <FloatInSection>
+          <section className={styles.hero}>
+            <h1 className="reveal">Våre Tjenester</h1>
+            <p className="reveal">
+              Vi hjelper deg med å realisere dine digitale ideer – fra elegante
+              nettsider og webdesign for bedrifter til kraftfulle
+              webapplikasjoner.
+            </p>
+          </section>
+        </FloatInSection>
       </header>
+
       <main>
-        <section className={styles.services}>
-          <h2>Dette kan vi gjøre for deg</h2>
-          <p>
-            Vi tilbyr moderne frontend-utvikling med fokus på brukervennlighet,
-            ytelse og visuell kvalitet.
-          </p>
-          <Accordion items={servicesList} />
-        </section>
+        <FloatInSection>
+          <section className={styles.services}>
+            <h2 className="reveal">Dette kan vi gjøre for deg</h2>
+            <p className="reveal">
+              Vi tilbyr moderne frontend-utvikling med fokus på
+              brukervennlighet, ytelse og visuell kvalitet.
+            </p>
+            <Accordion items={servicesList} />
+          </section>
+        </FloatInSection>
 
         <section className={styles.cta}>
           <h2>Klar for neste steg?</h2>

@@ -66,6 +66,8 @@
   max-width: 900px;
   margin: var(--spacing-medium) 0;
   font-family: var(--primary-font), sans-serif;
+
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .headerContainer p {

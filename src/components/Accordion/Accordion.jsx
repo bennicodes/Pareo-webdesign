@@ -11,7 +11,7 @@ const Accordion = ({ items }) => {
   return (
     <ul className={styles.accordion}>
       {items.map((item, index) => (
-        <li key={index} className={styles.accordionItem}>
+        <li key={index} className={`${styles.accordionItem} reveal`}>
           <button
             className={styles.accordionTitle}
             onClick={() => toggle(index)}

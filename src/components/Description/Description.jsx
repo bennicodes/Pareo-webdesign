@@ -1,10 +1,11 @@
 import React from "react";
+import FloatInSection from "../FloatInSection/FloatInSection";
 import styles from "./Description.module.css";
 
 const Description = () => {
   return (
     <ul className={styles.description}>
-      <li className={styles.descriptionText}>
+      <li className={`${styles.descriptionText} reveal`}>
         <h3 className={styles.descriptionHeading}>Strategi og innsikt</h3>
         <p>
           Vi setter oss inn i dine mål, utfordringer og visjoner. Sammen
@@ -12,7 +13,7 @@ const Description = () => {
           vi en realistisk plan som passer din tidsramme.
         </p>
       </li>
-      <li className={styles.descriptionText}>
+      <li className={`${styles.descriptionText} reveal`}>
         <h3 className={styles.descriptionHeading}>
           Design og utvikling av bedriftssider
         </h3>
@@ -23,7 +24,7 @@ const Description = () => {
           god opplevelse for kundene dine.
         </p>
       </li>
-      <li className={styles.descriptionText}>
+      <li className={`${styles.descriptionText} reveal`}>
         <h3 className={styles.descriptionHeading}>
           Teknisk utvikling av webdesign
         </h3>
