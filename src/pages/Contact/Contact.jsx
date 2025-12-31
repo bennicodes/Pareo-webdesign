@@ -4,7 +4,8 @@ import {
   faMapPin,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
@@ -17,7 +18,16 @@ import styles from "./Contact.module.css";
 
 const Contact = () => {
   usePageTitle("Kontakt oss – Pareo");
+
   const { theme, toggleTheme } = useTheme();
+  const formRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.selectedPackage && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [location.state]);
 
   useScrollToTop();
 
@@ -40,7 +50,7 @@ const Contact = () => {
       </header>
 
       {/* --- MAIN CONTENT --- */}
-      <main className={styles.contactMain}>
+      <main className={styles.contactMain} ref={formRef}>
         <FloatIn>
           <div className={styles.splitLayout}>
             {/* VENSTRE SIDE: SKJEMA */}
@@ -62,7 +72,10 @@ const Contact = () => {
               <h2>Direkte kontakt</h2>
 
               {/* E-post blokk */}
-              <div className={styles.infoBlock}>
+              <a
+                href="mailto:kontaktpareo@gmail.com"
+                className={styles.infoBlock}
+              >
                 <div className={styles.iconCircle}>
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
@@ -72,7 +85,7 @@ const Contact = () => {
                     kontaktpareo@gmail.com
                   </a>
                 </div>
-              </div>
+              </a>
 
               {/* Lokasjon blokk */}
               <div className={`${styles.infoBlock} reveal`}>

@@ -13,8 +13,9 @@ const pricingData = [
       "Moderne design",
       "Kontaktskjema",
       "SEO-oppsett",
-      "Rask lading",
+      "Rask lasting",
     ],
+    popular: false,
   },
   {
     name: "Bedrift",
@@ -40,6 +41,7 @@ const pricingData = [
       "API-integrasjoner",
       "UX-analyse",
     ],
+    popular: false,
   },
 ];
 

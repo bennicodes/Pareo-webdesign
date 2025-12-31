@@ -89,7 +89,7 @@ const Services = () => {
 
         {/* Pricing */}
         <FloatIn>
-          <PricePackages />
+          <PricePackages onSelect={navigateToContact} />
         </FloatIn>
 
         <section className={styles.cta}>
