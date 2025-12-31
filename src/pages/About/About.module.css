@@ -25,6 +25,7 @@
   justify-content: center;
   text-align: center;
   gap: var(--spacing-large);
+
   /* Background matching Services page */
   background: linear-gradient(
     to bottom,
@@ -62,6 +63,14 @@
   opacity: 0.15;
 }
 
+.hero .reveal p {
+  margin-bottom: var(--spacing-large);
+}
+
+.heroButton {
+  margin: var(--spacing-medium);
+}
+
 .hero h1,
 .hero p {
   position: relative;
@@ -74,7 +83,7 @@
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: var(--spacing-medium);
-  padding: 0 var(--spacing-medium)
+  padding: 0 var(--spacing-medium);
 }
 
 /* Main Content Structure */
@@ -95,7 +104,7 @@ main {
   background-color: var(--card-bg);
   border: 1px solid rgba(var(--accent-rgb), 0.1);
   border-radius: var(--border-radius-large);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
 
   margin: var(--spacing-large) 0;
   padding: var(--spacing-xl) var(--spacing-large);

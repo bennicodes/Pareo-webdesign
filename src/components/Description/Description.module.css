@@ -1,7 +1,6 @@
 .description {
   width: 100%;
   display: grid;
-  /* Creates a 3-column layout on desktop */
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
   padding: var(--spacing-large) 0;

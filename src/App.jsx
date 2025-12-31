@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import Description from "./components/Description/Description.jsx";
+import FloatInSection from "./components/FloatIn/FloatIn.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
@@ -31,83 +32,93 @@ function App() {
         <ScrollToTop />
       </div>
       <Header>
-        <div className={styles.headerContainer}>
-          <h1>Webdesign og nettsider for bedrifter i Norge</h1>
-          <p>
-            Pareo er et webbyrå som lager skreddersydde nettsider for bedrifter
-            i Norge. Vi tilbyr moderne, brukervennlig webdesign som øker
-            synlighet, tillit og konverteringer.
-          </p>
-
-          <Button
-            classname={styles.contactButton}
-            onClick={scrollToContactSection}
-          >
-            Kontakt oss
-          </Button>
-          <div className={styles.headerDescription}>
-            <p className={styles.description}>
-              Klar for å ta neste steg? Send oss en uforpliktende henvendelse –
-              vi svarer raskt.
+        <FloatInSection>
+          <div className={styles.headerContainer}>
+            <h1 className="reveal">
+              Webdesign og nettsider for bedrifter i Norge
+            </h1>
+            <p className="reveal">
+              Pareo er et webbyrå som lager skreddersydde nettsider for
+              bedrifter i Norge. Vi tilbyr moderne, brukervennlig webdesign som
+              øker synlighet, tillit og konverteringer.
             </p>
+
+            <div className={`${styles.headerDescription} reveal`}>
+              <Button
+                classname={styles.contactButton}
+                onClick={scrollToContactSection}
+              >
+                Kontakt oss
+              </Button>
+              <p className={styles.description}>
+                Klar for å ta neste steg? Send oss en uforpliktende henvendelse
+                – vi svarer raskt.
+              </p>
+            </div>
           </div>
-        </div>
+        </FloatInSection>
       </Header>
       {/* </header> */}
       {/* ---------------------------- */}
       <main className={styles.main}>
-        <section className={styles.descriptionSection}>
-          <h2 className={styles.descriptionTitle}>Hva gjør vi?</h2>
-          <p>
-            Vi starter med å bli kjent med deg og din bedrift. Dette innebærer:
-          </p>
-          <Description />
-        </section>
+        <FloatInSection>
+          <section className={styles.descriptionSection}>
+            <h2 className={styles.descriptionTitle}>Hva gjør vi?</h2>
+            <p className="reveal">
+              Vi starter med å bli kjent med deg og din bedrift. Dette
+              innebærer:
+            </p>
+            <Description />
+          </section>
+        </FloatInSection>
+
         {/* ---------------------------- */}
         {/* --- Contact Section --- */}
-        <section className={styles.contactSection} ref={contactSectionRef}>
-          <div className={styles.contactInfo}>
-            <h2 className={styles.contactTitle}>Kontakt Oss</h2>
-            <p className={styles.contactDescription}>
-              Klar for en ny nettside? Slik går vi frem når du sender en
-              henvendelse:
-            </p>
+        <FloatInSection>
+          <section className={styles.contactSection} ref={contactSectionRef}>
+            <div className={`${styles.contactInfo} reveal`}>
+              <h2 className={styles.contactTitle}>Kontakt Oss</h2>
+              <p className={styles.contactDescription}>
+                Klar for en ny nettside? Slik går vi frem når du sender en
+                henvendelse:
+              </p>
 
-            <ol className={styles.recipeList}>
-              <li>
-                <div>
-                  <strong>Send henvendelse</strong>
-                  <p>
-                    Fyll ut skjemaet med navn, e-post og en kort beskrivelse av
-                    prosjektet.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Uforpliktende prat</strong>
-                  <p>
-                    Vi tar kontakt innen 24 timer for å avtale en kort samtale
-                    om dine behov.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <strong>Løsningsforslag</strong>
-                  <p>
-                    Vi sender deg et konkret tilbud og en plan for din nye
-                    nettside.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
+              <ol className={styles.recipeList}>
+                <li>
+                  <div>
+                    <strong>Send henvendelse</strong>
+                    <p>
+                      Fyll ut skjemaet med navn, e-post og en kort beskrivelse
+                      av prosjektet.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Uforpliktende prat</strong>
+                    <p>
+                      Vi tar kontakt innen 24 timer for å avtale en kort samtale
+                      om dine behov.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <strong>Løsningsforslag</strong>
+                    <p>
+                      Vi sender deg et konkret tilbud og en plan for din nye
+                      nettside.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
 
-          <div className={styles.contactFormContainer}>
-            <ContactForm />
-          </div>
-        </section>
+            <div className={`${styles.contactFormContainer} reveal`}>
+              <ContactForm />
+            </div>
+          </section>
+        </FloatInSection>
       </main>
       <footer>
         <Footer />

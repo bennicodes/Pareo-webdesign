@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/Button/Button";
+import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import PricePackages from "../../components/PricePackages.jsx/Pricepackages";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
@@ -42,8 +44,12 @@ const Services = () => {
   usePageTitle("Tjenester – Pareo");
   const navigate = useNavigate();
 
-  const navigateToContact = () => {
-    navigate("/kontakt");
+  const navigateToContact = (packageName) => {
+    if (!packageName) {
+      navigate("/kontakt");
+    } else {
+      navigate("/kontakt", { state: { selectedPackage: packageName } });
+    }
   };
 
   const { theme, toggleTheme } = useTheme();
@@ -55,24 +61,36 @@ const Services = () => {
       <header className={styles.header}>
         <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
         <ScrollToTop />
-        <section className={styles.hero}>
-          <h1>Våre Tjenester</h1>
-          <p>
-            Vi hjelper deg med å realisere dine digitale ideer – fra elegante
-            nettsider og webdesign for bedrifter til kraftfulle
-            webapplikasjoner.
-          </p>
-        </section>
+
+        {/* HERO */}
+        <FloatIn>
+          <section className={styles.hero}>
+            <h1 className="reveal">Våre Tjenester</h1>
+            <p className="reveal">
+              Vi hjelper deg med å realisere dine digitale ideer – fra elegante
+              nettsider og webdesign for bedrifter til kraftfulle
+              webapplikasjoner.
+            </p>
+          </section>
+        </FloatIn>
       </header>
+
       <main>
-        <section className={styles.services}>
-          <h2>Dette kan vi gjøre for deg</h2>
-          <p>
-            Vi tilbyr moderne frontend-utvikling med fokus på brukervennlighet,
-            ytelse og visuell kvalitet.
-          </p>
-          <Accordion items={servicesList} />
-        </section>
+        <FloatIn>
+          <section className={styles.services}>
+            <h2>Dette kan vi gjøre for deg</h2>
+            <p className="reveal">
+              Vi tilbyr moderne frontend-utvikling med fokus på
+              brukervennlighet, ytelse og visuell kvalitet.
+            </p>
+            <Accordion items={servicesList} />
+          </section>
+        </FloatIn>
+
+        {/* Pricing */}
+        <FloatIn>
+          <PricePackages onSelect={navigateToContact} />
+        </FloatIn>
 
         <section className={styles.cta}>
           <h2>Klar for neste steg?</h2>
@@ -81,7 +99,7 @@ const Services = () => {
             muligheter? Vi tar gjerne en uforpliktende prat – over en kaffe,
             digitalt eller fysisk.
           </p>
-          <Button onClick={navigateToContact}>Kontakt oss</Button>
+          <Button onClick={() => navigateToContact()}>Kontakt oss</Button>
         </section>
       </main>
       <footer>

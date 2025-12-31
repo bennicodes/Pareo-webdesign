@@ -12,6 +12,7 @@ export const sendContactEmail = async (formData) => {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
+        selectedPackage: formData.selectedPackage,
         message: formData.message,
         time: new Date().toLocaleString("no-NO"),
       },

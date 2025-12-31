@@ -23,6 +23,19 @@ button {
   cursor: pointer;
 }
 
+.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 /* Variables */
 :root {
   /* Common Spacing & Fonts */
@@ -32,6 +45,7 @@ button {
   --spacing-xl: 4rem;
   --primary-font: "Inter-Regular", sans-serif;
   --border-radius-large: 16px;
+  --border-radius-medium: 8px;
 
   /* LIGHT MODE (Ice Sea) */
   --text-color: #0f172a; /* Deep Navy Text */
