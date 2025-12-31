@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import ContactForm from "../../components/ContactForm/ContactForm";
-import FloatInSection from "../../components/FloatInSection/FloatInSection";
+import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
@@ -28,7 +28,7 @@ const Contact = () => {
 
       {/* --- HERO SECTION --- */}
       <header className={styles.header}>
-        <FloatInSection>
+        <FloatIn>
           <div className={styles.heroContent}>
             <h1 className="reveal">Kontakt oss</h1>
             <p className={`${styles.heroDescription} reveal`}>
@@ -36,12 +36,12 @@ const Contact = () => {
               fort vi kan.
             </p>
           </div>
-        </FloatInSection>
+        </FloatIn>
       </header>
 
       {/* --- MAIN CONTENT --- */}
       <main className={styles.contactMain}>
-        <FloatInSection>
+        <FloatIn>
           <div className={styles.splitLayout}>
             {/* VENSTRE SIDE: SKJEMA */}
             <section className={styles.openFormSection}>
@@ -112,7 +112,7 @@ const Contact = () => {
               </div>
             </aside>
           </div>
-        </FloatInSection>
+        </FloatIn>
       </main>
 
       <footer>

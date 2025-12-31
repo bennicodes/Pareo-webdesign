@@ -1,5 +1,5 @@
 import React from "react";
-import FloatInSection from "../FloatInSection/FloatInSection";
+import FloatInSection from "../FloatIn/FloatIn";
 import styles from "./Description.module.css";
 
 const Description = () => {

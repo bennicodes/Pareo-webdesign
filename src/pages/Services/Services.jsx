@@ -2,9 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Accordion from "../../components/Accordion/Accordion";
 import Button from "../../components/Button/Button";
-import FloatInSection from "../../components/FloatInSection/FloatInSection";
+import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import PricePackages from "../../components/PricePackages.jsx/Pricepackages";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
@@ -43,8 +44,12 @@ const Services = () => {
   usePageTitle("Tjenester – Pareo");
   const navigate = useNavigate();
 
-  const navigateToContact = () => {
-    navigate("/kontakt");
+  const navigateToContact = (packageName) => {
+    if (!packageName) {
+      navigate("/kontakt");
+    } else {
+      navigate("/kontakt", { state: { selectedPackage: packageName } });
+    }
   };
 
   const { theme, toggleTheme } = useTheme();
@@ -58,7 +63,7 @@ const Services = () => {
         <ScrollToTop />
 
         {/* HERO */}
-        <FloatInSection>
+        <FloatIn>
           <section className={styles.hero}>
             <h1 className="reveal">Våre Tjenester</h1>
             <p className="reveal">
@@ -67,11 +72,11 @@ const Services = () => {
               webapplikasjoner.
             </p>
           </section>
-        </FloatInSection>
+        </FloatIn>
       </header>
 
       <main>
-        <FloatInSection>
+        <FloatIn>
           <section className={styles.services}>
             <h2>Dette kan vi gjøre for deg</h2>
             <p className="reveal">
@@ -80,7 +85,12 @@ const Services = () => {
             </p>
             <Accordion items={servicesList} />
           </section>
-        </FloatInSection>
+        </FloatIn>
+
+        {/* Pricing */}
+        <FloatIn>
+          <PricePackages />
+        </FloatIn>
 
         <section className={styles.cta}>
           <h2>Klar for neste steg?</h2>
@@ -89,7 +99,7 @@ const Services = () => {
             muligheter? Vi tar gjerne en uforpliktende prat – over en kaffe,
             digitalt eller fysisk.
           </p>
-          <Button onClick={navigateToContact}>Kontakt oss</Button>
+          <Button onClick={() => navigateToContact()}>Kontakt oss</Button>
         </section>
       </main>
       <footer>

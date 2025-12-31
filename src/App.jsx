@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import Button from "./components/Button/Button.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import Description from "./components/Description/Description.jsx";
-import FloatInSection from "./components/FloatInSection/FloatInSection.jsx";
+import FloatInSection from "./components/FloatIn/FloatIn.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";

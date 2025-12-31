@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 import AboutDescription from "../../components/AboutDescription/AboutDescription";
 import Button from "../../components/Button/Button";
-import FloatInSection from "../../components/FloatInSection/FloatInSection";
+import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
@@ -32,7 +32,7 @@ const About = () => {
       <header className={styles.header}>
         <Navbar isDarkMode={theme} setIsDarkMode={toggleTheme} />
         <ScrollToTop />
-        <FloatInSection>
+        <FloatIn>
           <section className={styles.hero}>
             <h1 className="reveal">To utviklere. Ett lag. Én visjon.</h1>
             <div className="reveal">
@@ -48,11 +48,11 @@ const About = () => {
               </Button>
             </div>
           </section>
-        </FloatInSection>
+        </FloatIn>
       </header>
 
       <main>
-        <FloatInSection>
+        <FloatIn>
           <section className={`${styles.intro}`}>
             <h2 className="reveal">Hvem er vi?</h2>
             <p className="reveal">
@@ -87,7 +87,7 @@ const About = () => {
             <h2 className="reveal">Dette kan vi hjelpe deg med</h2>
             <AboutDescription />
           </section>
-        </FloatInSection>
+        </FloatIn>
 
         <section className={styles.cta}>
           <h2>La oss skape noe sammen</h2>

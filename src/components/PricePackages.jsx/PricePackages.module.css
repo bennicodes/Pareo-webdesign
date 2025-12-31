@@ -1,0 +1,81 @@
+.pricingWrapper {
+  min-width: 90vw;
+  max-width: 1200px;
+  margin: 4rem auto;
+  text-align: center;
+}
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+.priceCard {
+  background: var(--card-bg);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: 0.3s;
+  box-shadow: var(--form-shadow);
+}
+.priceCard:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+}
+.popular {
+  border: 2px solid var(--accent-color);
+  background: rgba(var(--accent-rgb), 0.02);
+}
+.badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 0.7rem;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  margin: 1rem 0;
+}
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+  flex-grow: 1;
+}
+.featureList li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.featureList li::before {
+  content: "✓";
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/* Responsivitet: Gå til 1 kolonne på mindre skjermer */
+@media (max-width: 1024px) {
+  .pricingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+}

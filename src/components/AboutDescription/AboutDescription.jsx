@@ -1,9 +1,9 @@
-import FloatInSection from "../FloatInSection/FloatInSection";
+import FloatIn from "../FloatIn/FloatIn";
 import styles from "./AboutDescription.module.css";
 
 const AboutDescription = () => {
   return (
-    <FloatInSection>
+    <FloatIn>
       <ul className={styles.servicesList}>
         <li className={`${styles.serviceBox} reveal`}>
           <h3 className={styles.serviceHeading}>Responsive nettsider</h3>
@@ -27,7 +27,7 @@ const AboutDescription = () => {
           </p>
         </li>
       </ul>
-    </FloatInSection>
+    </FloatIn>
   );
 };
 

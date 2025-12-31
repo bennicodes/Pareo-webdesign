@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FloatInSection = ({ children }) => {
+const FloatIn = ({ children }) => {
   const container = useRef();
 
   useGSAP(
@@ -49,4 +49,4 @@ const FloatInSection = ({ children }) => {
   return <div ref={container}>{children}</div>;
 };
 
-export default FloatInSection;
+export default FloatIn;

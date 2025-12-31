@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import { sendContactEmail } from "../../config/emailJsConfig";
 import useContactFormValidation from "../../hooks/useFormValidation";
 import Button from "../Button/Button";
@@ -6,10 +7,14 @@ import Spinner from "../Spinner/Spinner";
 import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
+  // Get chosen package from service pages
+  const location = useLocation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    selectedPackage: "",
     message: "",
   });
 
@@ -18,6 +23,16 @@ const ContactForm = () => {
   const [characterCount, setCharacterCount] = useState(0);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Input selected package from service page
+  useEffect(() => {
+    if (location.state?.selectedPackage) {
+      setFormData((prev) => ({
+        ...prev,
+        selectedPackage: location.state.selectedPackage,
+      }));
+    }
+  }, [location.state]);
 
   // Custom hook for form validation
   const { errors, validate, validateField } = useContactFormValidation();
@@ -52,6 +67,7 @@ const ContactForm = () => {
     if (!isValid) {
       return;
     }
+    console.log("Dette sendes til EmailJS:", formData);
     try {
       setIsLoading(true);
       await sendContactEmail(formData);
@@ -66,6 +82,7 @@ const ContactForm = () => {
         name: "",
         email: "",
         phone: "",
+        selectedPackage: "",
         message: "",
       });
       setCharacterCount(0);
@@ -100,7 +117,9 @@ const ContactForm = () => {
           </div>
           {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
         </div>
+
         {/* -------------------- */}
+
         <div className={styles.inputGroup}>
           <div
             className={`${styles.inputWrapper} ${
@@ -120,7 +139,9 @@ const ContactForm = () => {
             <p className={styles.errorMessage}>{errors.email}</p>
           )}
         </div>
+
         {/* -------------------- */}
+
         <div className={styles.inputGroup}>
           <div
             className={`${styles.inputWrapper} ${
@@ -140,7 +161,37 @@ const ContactForm = () => {
             <p className={styles.errorMessage}>{errors.phone}</p>
           )}
         </div>
+
         {/* -------------------- */}
+
+        {/* --- Radio buttons --- */}
+        <div className={styles.packageGroup}>
+          <p className={styles.packageLabel}>Velg pakke (valgfritt):</p>
+          <div className={styles.radioContainer}>
+            {["Basis", "Bedrift", "Egendefinert"].map((pkg) => (
+              <label
+                key={pkg}
+                htmlFor={`pkg-${pkg}`} // Kobler label til input via ID
+                className={`${styles.radioOption} ${
+                  formData.selectedPackage === pkg ? styles.activeRadio : ""
+                }`}
+              >
+                <input
+                  type="radio"
+                  id={`pkg-${pkg}`} // Unik ID for hver knapp
+                  name="selectedPackage"
+                  value={pkg}
+                  checked={formData.selectedPackage === pkg}
+                  onChange={handleChange}
+                />
+                {pkg}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* --------------- */}
+
         <div className={styles.inputGroup}>
           <div
             className={`${styles.inputWrapper} ${
