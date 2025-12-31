@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import Button from "../Button/Button";
 import FloatIn from "../FloatIn/FloatIn";
 import styles from "./PricePackages.module.css";
@@ -13,8 +14,9 @@ const pricingData = [
       "Moderne design",
       "Kontaktskjema",
       "SEO-oppsett",
-      "Rask lading",
+      "Rask lasting",
     ],
+    popular: false,
   },
   {
     name: "Bedrift",
@@ -40,6 +42,7 @@ const pricingData = [
       "API-integrasjoner",
       "UX-analyse",
     ],
+    popular: false,
   },
 ];
 
