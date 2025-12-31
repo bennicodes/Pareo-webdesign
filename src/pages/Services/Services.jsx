@@ -73,7 +73,7 @@ const Services = () => {
       <main>
         <FloatInSection>
           <section className={styles.services}>
-            <h2 className="reveal">Dette kan vi gjøre for deg</h2>
+            <h2>Dette kan vi gjøre for deg</h2>
             <p className="reveal">
               Vi tilbyr moderne frontend-utvikling med fokus på
               brukervennlighet, ytelse og visuell kvalitet.
