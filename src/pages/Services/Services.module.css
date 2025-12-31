@@ -74,9 +74,7 @@
   margin-bottom: var(--spacing-medium);
 }
 
-[data-theme="dark"] .hero h1 {
-  /* text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); */
-}
+
 
 .hero p {
   font-size: 1.25rem;
