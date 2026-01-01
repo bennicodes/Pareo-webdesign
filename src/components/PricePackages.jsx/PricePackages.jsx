@@ -6,7 +6,7 @@ import styles from "./PricePackages.module.css";
 const pricingData = [
   {
     name: "Basis",
-    price: "12 900,-",
+    price: "12 500,-",
     description: "Perfekt for nyoppstartede bedrifter.",
     features: [
       "Enkeltside",
@@ -14,12 +14,13 @@ const pricingData = [
       "Kontaktskjema",
       "SEO-oppsett",
       "Rask lasting",
+      "Mobiloptimalisert",
     ],
     popular: false,
   },
   {
     name: "Bedrift",
-    price: "24 900,-",
+    price: "25 000,-",
     description: "Vår mest populære pakke for vekst.",
     features: [
       "Inntil 5 sider",
@@ -27,8 +28,9 @@ const pricingData = [
       "Avansert SEO",
       "Google Maps",
       "Sikkerhetstest",
+      "Integrert bestillingssystem",
     ],
-    popular: true,
+    popular: false,
   },
   {
     name: "Egendefinert",
