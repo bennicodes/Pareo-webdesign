@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button";
 import FloatIn from "../../components/FloatIn/FloatIn";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import PricePackages from "../../components/PricePackages.jsx/Pricepackages";
+import PricePackages from "../../components/PricePackages/PricePackages";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 import { useTheme } from "../../Context/ThemeContext";
 import { usePageTitle } from "../../hooks/usePageTitles";
